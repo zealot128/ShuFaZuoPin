@@ -1,0 +1,21 @@
+- title t('.title')
+= render "tasks"
+
+%table
+  %tr
+<% for attribute in attributes -%>
+    %th <%= attribute.human_name %>
+<% end -%>
+    %th
+    %th
+    %th
+
+  - @<%= plural_table_name %>.each do |<%= singular_table_name %>|
+    %tr
+<% for attribute in attributes -%>
+      %td= <%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+      %td= link_to t('edit'), edit_<%= singular_table_name %>_path(<%= singular_table_name %>)
+
+%br
+

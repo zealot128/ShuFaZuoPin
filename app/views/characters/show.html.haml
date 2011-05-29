@@ -1,0 +1,18 @@
+- title t('.title')
+= render "tasks"
+%p
+  %b Pinyin:
+  = @character.pinyin
+%p
+  %b Hanzi:
+  = @character.hanzi
+%p
+  %b Translation:
+  = @character.translation
+%p
+  %b Examples:
+  = @character.examples
+
+= link_to 'Edit', edit_character_path(@character)
+\|
+= link_to 'Back', characters_path

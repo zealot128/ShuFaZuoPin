@@ -8,7 +8,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Shufazuopin
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
+    config.autoload_paths << "#{config.root}/lib"    # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
@@ -39,6 +39,10 @@ module Shufazuopin
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
+    config.generators do |g|
+      g.template_engine :haml
+    end
+
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

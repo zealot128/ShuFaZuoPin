@@ -1,0 +1,10 @@
+---
+content_path: ! '#content text()'
+partials:
+  tasks: ! '#menu ul text()'
+  title: ! '#header h1 text()'
+index_path: index.html
+stylesheet_dir: ''
+image_dir: images
+javascript_dir: javascripts
+no_sass: false

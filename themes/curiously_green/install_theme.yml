@@ -1,0 +1,10 @@
+---
+content_path: ! '#rcontent:text'
+partials:
+  menu: ! '#menu'
+  sidebar: ! '#lcontent'
+index_path: index.html
+stylesheet_dir: ''
+image_dir: images
+javascript_dir: javascripts
+no_sass: false

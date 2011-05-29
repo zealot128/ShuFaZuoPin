@@ -1,0 +1,23 @@
+- title t('.title')
+= render "tasks"
+
+%table
+  %tr
+    %th Pinyin
+    %th Hanzi
+    %th Translation
+    %th Examples
+    %th
+    %th
+    %th
+
+  - @characters.each do |character|
+    %tr
+      %td= character.pinyin
+      %td= character.hanzi
+      %td= character.translation
+      %td= character.examples
+      %td= link_to t('edit'), edit_character_path(character)
+
+%br
+

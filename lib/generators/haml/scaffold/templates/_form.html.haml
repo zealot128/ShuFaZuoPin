@@ -1,0 +1,8 @@
+= semantic_form_for @<%= singular_table_name %> do |f|
+  = f.inputs "Basis" do
+
+  <% for attribute in attributes -%>
+  = f.input :<%= attribute.name %>
+  <% end %>
+
+  = f.buttons

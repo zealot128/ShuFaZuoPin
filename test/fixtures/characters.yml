@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  pinyin: MyString
+  hanzi: MyString
+  translation: MyString
+  examples: MyText
+
+two:
+  pinyin: MyString
+  hanzi: MyString
+  translation: MyString
+  examples: MyText

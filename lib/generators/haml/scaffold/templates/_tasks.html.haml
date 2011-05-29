@@ -1,0 +1,8 @@
+- set_tasks do |task|
+  - if user_signed_in?
+    - task.add_task t("tasks.index"), :url => <%= index_helper %>_path, :active => params[:action] == "index"
+    - task.add_task t("tasks.new"), :url => new_<%= singular_table_name %>_path, :active => params[:action] == "new"
+    - task.seperator
+  - if ["show","edit"].include? params[:action]
+    - task.add_task t("tasks.edit"),  :url => edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), :active => params[:action] == "edit"
+    - task.add_task t("tasks.delete"),  :url => <%= singular_table_name %>_path(@<%= singular_table_name %>),  :method => :delete, :confirm => t('are_you_sure_title', :title => @<%= singular_table_name %>.class.model_name.human)

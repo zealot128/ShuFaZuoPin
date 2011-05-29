@@ -1,0 +1,8 @@
+- set_tasks do |task|
+  - if current_user.present?
+    - task.add_task t("tasks.index"), :url => characters_path, :active => params[:action] == "index"
+    - task.add_task t("tasks.new"), :url => new_character_path, :active => params[:action] == "new"
+    - task.seperator
+  - if ["show","edit"].include? params[:action]
+    - task.add_task t("tasks.edit"),  :url => edit_character_path(@character), :active => params[:action] == "edit"
+    - task.add_task t("tasks.delete"),  :url => character_path(@character),  :method => :delete, :confirm => t('are_you_sure_title', :title => @character.class.model_name.human)

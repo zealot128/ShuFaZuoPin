@@ -1,14 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Shufazuopin</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title><%=yield :title %></title>
+    <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag  "facebox" %>
+    <%= stylesheet_link_tag "facebox"%>
+    <%= stylesheet_link_tag "styles"%>
+    <%= yield(:head) %>
+  </head>
 
-<%= yield %>
+  <body id="altbody">
+
+    <div id="wrapper-header">
+      <div id="header">
+        <h1><%= yield(:title) || render_or_default('title') %></h1>
+      </div>
+    </div>
+
+    <div id="wrapper-menu">
+      <div id="menu">
+        <ul><%= yield(:tasks) || render_or_default('tasks') %></ul>
+      </div>
+    </div>
+    <div id="content">
+      <div id='flash'>
+        <% flash.each do |type,message| %>
+          <div class='message <%=type %>'>
+            <% if message.is_a? Array %>
+              <%= message.join("<br/>") %>
+            <% else %>
+              <%= message %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <%= yield %></div>
+
+    <div id="footer">
+      <% if current_user.present? %>
+        Eingeloggt als <%= current_user.username %>
+      <%=link_to t(".logout"), logout_path %>
+    <% else %>
+      <%=link_to t(".login"), login_path %>
+
+    <% end %>
+  </div>
 
 </body>
+
 </html>

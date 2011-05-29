@@ -1,0 +1,10 @@
+---
+content_path: ! '#content:text'
+partials:
+  menu: ! '#topnav'
+  tasks: .blocklinks
+index_path: index.html
+stylesheet_dir: app/assets/stylesheets
+image_dir: public/images
+javascript_dir: app/assets/javascripts
+no_sass: false
