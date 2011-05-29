@@ -10,8 +10,12 @@ gem "mysql2"
 gem "nifty-generators"
 gem "cancan"
 gem "haml"
+gem "nokogiri"
 gem "formtastic"
 gem "shoulda"
+gem 'irbtools', :require => 'irbtools/configure'
+gem "tabulatr"
+
 
 # Asset template engines
 gem 'sass'

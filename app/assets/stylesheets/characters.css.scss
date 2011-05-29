@@ -1,5 +1,24 @@
-/* 
+/*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+body {
+  font-size: 1.3em;
+
+}
+#hanzi {
+  font-size: 500%;
+  line-height: 1.2;
+  padding-right: 50px;
+  float:left;
+}
+#pinyin {
+  line-height: 6;
+}
+#translation {
+  clear: both;
+}
+li.ui-menu-item {
+  text-align: left;
+}

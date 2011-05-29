@@ -1,10 +1,18 @@
 class CharactersController < ApplicationController
-  # load_and_authorize_resource
+  load_and_authorize_resource
+  include ActionView::Helpers::TextHelper
   def index
-    @characters = Character.all
 
     respond_to do |format|
-      format.html
+      format.html {
+        Tabulatr.paginate_options({page: 1, pagesize: 30, pagesizes: [10,20,50,100]})
+        @characters = Character.find_for_table(params)
+      }
+      format.json {
+        data = Character.find_for_ajax(params[:term])
+        data.map!{|i| { value: i.id, label: "#{i.hanzi}, #{i.pinyin} - #{truncate(i.translation)}"}}
+        render json: data
+      }
     end
   end
 

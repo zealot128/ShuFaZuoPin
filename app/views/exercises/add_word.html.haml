@@ -1,0 +1,7 @@
+
+= form_tag do |f|
+  = text_field_tag "q"
+  = hidden_field_tag "qid"
+  = submit_tag t('.add')
+= javascript_tag do
+  jQuery(window.autocomplete());

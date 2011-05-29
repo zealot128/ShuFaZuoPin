@@ -1,5 +1,6 @@
 Shufazuopin::Application.routes.draw do
   get "exercises/index"
+  get "exercises/add_word"
 
   resources :characters
 

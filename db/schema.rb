@@ -10,15 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529084901) do
+ActiveRecord::Schema.define(:version => 20110529170049) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
     t.string   "hanzi"
-    t.string   "translation"
-    t.text     "examples"
+    t.text     "translation"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "freq"
+    t.string   "norm_pinyin"
+    t.integer  "tone"
   end
 
   create_table "selections", :force => true do |t|

@@ -4,9 +4,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title><%=yield :title %></title>
     <%= javascript_include_tag "jquery" %>
+    <%= javascript_include_tag "jquery-ui.min" %>
     <%= javascript_include_tag  "facebox" %>
+    <%= javascript_include_tag  "characters" %>
     <%= stylesheet_link_tag "facebox"%>
     <%= stylesheet_link_tag "styles"%>
+    <%= stylesheet_link_tag :tabulatr %>
+    <%= stylesheet_link_tag :characters %>
+    <%= stylesheet_link_tag :formtastic %>
+    <%= stylesheet_link_tag "jquery-ui.custom" %>
+
     <%= yield(:head) %>
   </head>
 

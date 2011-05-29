@@ -1,23 +1,12 @@
 - title t('.title')
 = render "tasks"
 
-%table
-  %tr
-    %th Pinyin
-    %th Hanzi
-    %th Translation
-    %th Examples
-    %th
-    %th
-    %th
-
-  - @characters.each do |character|
-    %tr
-      %td= character.pinyin
-      %td= character.hanzi
-      %td= character.translation
-      %td= character.examples
-      %td= link_to t('edit'), edit_character_path(character)
-
-%br
-
+= table_for @characters,     { :select_controls => [], :submit_label => "Anwenden", :info_text => "Zeige %1$d, gesamt %2$d" } do |t|
+  - t.column :hanzi do |r|
+    - link_to r.hanzi, r
+  - t.column :pinyin
+  - t.column :freq
+  - t.column :translation do |r|
+    - truncate(r.translation.split("\n").first, :length => 80)
+  - t.action do |r|
+    -link_to t('edit'), edit_character_path(r)

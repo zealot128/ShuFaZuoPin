@@ -1,0 +1,18 @@
+de:
+  are_you_sure_title: Sind sie sicher?
+  edit: Bearbeiten
+  tasks:
+    edit: Bearbeiten
+    delete: Löschen
+    index: Liste
+    new: Neu
+  layouts:
+    application:
+      login: Einloggen
+  characters:
+    index:
+      title: Alle HanZi-Zeichen
+  exercises:
+    index:
+      exercises: Übung
+
