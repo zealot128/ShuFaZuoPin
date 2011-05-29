@@ -1,4 +1,6 @@
 Shufazuopin::Application.routes.draw do
+  resources :selections
+
   get "exercises/index"
   get "exercises/add_word"
 

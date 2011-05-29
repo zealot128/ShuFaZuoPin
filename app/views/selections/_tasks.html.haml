@@ -1,0 +1,8 @@
+- set_tasks do |task|
+  - if logged_in?
+    - task.add_task t("tasks.index"), :url => selections_path, :active => params[:action] == "index"
+    - task.add_task t("tasks.new"), :url => new_selection_path, :active => params[:action] == "new"
+    - task.seperator
+  - if ["show","edit"].include? params[:action]
+    - task.add_task t("tasks.edit"),  :url => edit_selection_path(@selection), :active => params[:action] == "edit"
+    - task.add_task t("tasks.delete"),  :url => selection_path(@selection),  :method => :delete, :confirm => t('are_you_sure_title', :title => @selection.class.model_name.human)

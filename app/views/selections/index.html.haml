@@ -1,0 +1,19 @@
+- title t('.title')
+= render "tasks"
+
+%table
+  %tr
+    %th User
+    %th Character
+    %th
+    %th
+    %th
+
+  - @selections.each do |selection|
+    %tr
+      %td= selection.user_id
+      %td= selection.character_id
+      %td= link_to t('edit'), edit_selection_path(selection)
+
+%br
+

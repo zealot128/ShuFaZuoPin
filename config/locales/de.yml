@@ -1,6 +1,14 @@
 de:
   are_you_sure_title: Sind sie sicher?
   edit: Bearbeiten
+  flash:
+    error: "Es ist ein Fehler aufgetreten"
+    created: "%{model} erfolgreich angelegt"
+    updated: "%{model} erfolgreich aktualisiert"
+    deleted: "%{model} erfolgreich gelöscht"
+    undeleted: "%{model} erfolgreich wiederhergestellt"
+    unpublished: "Dieser Beitrag ist nicht verfügbar"
+    unvisible: "Diese Stelle ist zur Zeit nicht sichtbar"
   tasks:
     edit: Bearbeiten
     delete: Löschen
@@ -15,4 +23,31 @@ de:
   exercises:
     index:
       exercises: Übung
+      add: Wort hinzufügen
+  formtastic:
+    submit: Speichern
+    actions:
+      create: "%{model} anlegen"
+      update: "Aktualisieren"
+    hints:
+      user:
+        name: "Ihr Loginname darf nur Buchstaben und Zahlen beinhalten"
+        email: "Eine gültige E-Mail Adresse zur Versendung von wichtigen Kontoinformation."
+        password: "Ihr Passwort muss mindestens 6 Zeichen beinhalten"
+      sidebar_element:
+        name: Interner Name
+        title: Anzuzeigender Titel des Blocks
+        body: "Entweder HTML oder ERB. Bei ERB kann mittels <%= ruby-code %> eingefügt werden. Dabei ist ein Zugriff auf alle Klassen des Rails Models und Helper möglich."
+        weight: Gewicht zur Bestimmung der Reihenfolge. Je kleiner desto eher wird dieser Block angezeigt
+        on_pages: "Zeilengetrennt die Seiten, auf denen dieser Block erscheinen soll. Platzhalter * kann verwendet werden"
+      page:
+        menu_id: "Das Menü, in dem ein Menüpunkt mit dem Titel auftauchen soll. 'Kein Menü', falls die Seite lediglich manuell verlinkt werden soll"
+        menu_weight: "Drupal-analog, das Gewicht des Menüpunktes"
+        title: Anzuzeigender Titel im Meta-Tag und in Listen (Sitemap, Navigation)
+        headline: Überschrift, die alternativ als Seitenüberschrift verwendet werden kann, falls abweichend vom Titel
+      job:
+        link: Link zur Stellenausschreibung oder Ihrem Bewerbermanagementsystem
+        duration: Dauer der Stellenausschreibung ab Start-Datum
+        category_list: "Die globale Stellenbörse, in der der Job sichtbar sein soll. Geben Sie mindestens eine Kategorie an."
+        description: "Geben Sie hier eine aussagekräftige Beschreibung der Stelle an. Nutzen Sie zwischenüberschriften und Listen, um das Interesse der Besucher zu wecken"
 

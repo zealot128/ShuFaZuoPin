@@ -1,0 +1,12 @@
+- title t('.title')
+= render "tasks"
+%p
+  %b User:
+  = @selection.user_id
+%p
+  %b Character:
+  = @selection.character_id
+
+= link_to 'Edit', edit_selection_path(@selection)
+\|
+= link_to 'Back', selections_path

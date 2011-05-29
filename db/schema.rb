@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529170049) do
+ActiveRecord::Schema.define(:version => 20110529184528) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
@@ -28,6 +28,12 @@ ActiveRecord::Schema.define(:version => 20110529170049) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "level_1",      :default => 0
+    t.integer  "level_2",      :default => 0
+    t.integer  "level_3",      :default => 0
+    t.datetime "next_visit_1"
+    t.datetime "next_visit_2"
+    t.datetime "next_visit_3"
   end
 
   create_table "users", :force => true do |t|

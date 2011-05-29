@@ -1,0 +1,7 @@
+= semantic_form_for @selection do |f|
+  = f.inputs "Basis" do
+    = f.input :character_id, :as => :hidden
+    = f.input :search
+  = f.buttons
+= javascript_tag do
+  jQuery(window.autocomplete());

@@ -6,15 +6,15 @@
 
 window.autocomplete = () ->
   jQuery ->
-    $('#q').autocomplete {
+    $('#selection_search').autocomplete {
       source: "/characters.json",
       selectFirst: true,
       minLength: 3,
       focus: (event,ui ) ->
-          $( "#q" ).val( ui.item.label )
+          $( "#selection_search").val( ui.item.label )
           false
       select: (event,ui ) ->
-          $( "#q" ).val( ui.item.label )
-          $( "#qid" ).val( ui.item.value )
+          $( "#selection_search" ).val( ui.item.label )
+          $( "#selection_character_id" ).val( ui.item.value )
           false
     }
