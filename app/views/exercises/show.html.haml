@@ -12,15 +12,21 @@
     #hanzi-canvas
 
 
-  #hanzi-solution
+  #hanzi-solution.solve
     = @selection.character.hanzi
   .clear
 
 #buttons
-  = link_to "Richtig", exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button
-  = link_to "Falsch", exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :wrong), :method => :put, :class => :button
-  = link_to "Geraten/Gerade So", exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :mamahuhu), :method => :put, :class => :button
+  = link_to t(".solve"), '#', :class => :button, :id => "solve"
+  %br
+  .solve
+    = link_to t('.right'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button
+    = link_to t('.wrong'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :wrong), :method => :put, :class => :button
+    = link_to t('.close'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :mamahuhu), :method => :put, :class => :button
   .clear
+#info
+  = t ".due", :due => Selection.count_due(@exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
+
 
 
 

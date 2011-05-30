@@ -14,24 +14,34 @@ body #content {
     line-height: 1.5;
     float: left;
     padding: 20px;
-
   }
   #hanzi-canvas {
     float: left;
-
-
   }
+  .highlighted {
+    color: red;
+  }
+}
+.solve {
+  display: none;
 }
 .clear {
   clear: both;
 }
+#buttons {
+  position: fixed;
+  right: 20px;
+  top: 40%;
+}
+
 
 .button {
   display: block;
-  float: left;
   padding: 5px;
   margin: 5px;
   border: 1px solid #ccc;
+  background: #eee;
+  width: 150px;
   &:hover {
     background: #ccc;
     text-decoration: none;

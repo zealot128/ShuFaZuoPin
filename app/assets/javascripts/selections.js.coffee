@@ -6,7 +6,7 @@
 
 dimension = {'height' : 320, 'width' : 320}
 
-draw = ->
+window.draw = ->
     ctx = document.getElementsByTagName("canvas")[0].getContext("2d")
     if (ctx)
       ctx.lineWidth = 1
@@ -34,6 +34,13 @@ jQuery ->
     'width': dimension['width'],
     'height': dimension['height']
   }
-  $('#hanzi-canvas').each ->
-    draw()
+  $('#hanzi-canvas').bind 'click', ->  window.draw()
 
+  if document.location.pathname.match(/exercises\/1/)
+    window.setTimeout("window.draw()",200)
+
+    $('#solve').click ->
+      $('.solve').fadeIn()
+      hanzi = $('#hanzi-solution').text().trim()
+      $('.placeholder').html(hanzi).addClass("highlighted")
+      false

@@ -81,6 +81,22 @@ class SelectionTest < ActiveSupport::TestCase
       assert @selection.next_visit_1 > 4.minutes.from_now
       assert @selection.next_visit_1 < 8.minutes.from_now
     end
+
+    context "count due" do
+      should "single example" do
+        @selection.next_visit_1 = 2.days.ago
+        @selection.save
+        assert_equal 1, Selection.count_due(1, @user.id)
+      end
+      should "nil example" do
+        @selection.next_visit_1 =  nil
+        @selection.save
+        assert_equal 1, Selection.count_due(1, @user.id)
+      end
+    end
+
+
+
   end
 
 end

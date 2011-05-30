@@ -68,4 +68,8 @@ class Selection < ActiveRecord::Base
   end
 
 
+  def self.count_due(ex_id, user_id)
+    next_visit = "next_visit_#{ex_id.to_i}"
+    Selection.where(:user_id => user_id).where( "#{next_visit} is null or #{next_visit} < ?", DateTime.now).count
+  end
 end

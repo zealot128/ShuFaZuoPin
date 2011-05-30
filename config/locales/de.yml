@@ -14,6 +14,9 @@ de:
     delete: Löschen
     index: Liste
     new: Neu
+    hanzi_start: HanZi Training
+    pinyin_start: PinYin Training
+    new_word: Neues Wort
   layouts:
     application:
       login: Einloggen
@@ -24,6 +27,12 @@ de:
     index:
       exercises: Übung
       add: Wort hinzufügen
+    show:
+      due: "Anzahl Überfällig/Gesamt %{due}/%{total}"
+      right: "Richtig"
+      wrong: "Falsch"
+      close: "Geraten/Gerade so"
+      solve: "Lösen"
   formtastic:
     submit: Speichern
     actions:
