@@ -1,17 +1,4 @@
 - title "Details zu #{@character.hanzi}"
 = render "tasks"
 
-#hanzi
-  = @character.hanzi
-#pinyin
-  = @character.pinyin
-  (
-  = @character.norm_pinyin
-  )
-
-%ul#translation
-  - @character.translation.split("\n").reject{|i| i.empty?}.each do |tr|
-    %li
-      - tr.split(";").each do |td|
-        = td
-        %br
+= render 'character'

@@ -1,13 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
-one:
-  pinyin: MyString
-  hanzi: MyString
-  translation: MyString
-  examples: MyText
+---
+de:
+  id: 2657
+  pinyin: de
+  hanzi: 的
+  translation: ! '[de] grammatical particle marking genitive as well as simple and composed
+    adjectives; 我的 wǒde my; 高的 gāode high, tall; 是的 shìde that''s it, that''s right;
+    是...的 shì...de one who...; 他是说汉语的. Tā shì shuō Hànyǔde. He is one who speaks Chinese.
+    [dì] 目的 mùdì go'
+  freq: 0
+  norm_pinyin: de
+  tone: 0
+  hsk_level: 1
 
-two:
-  pinyin: MyString
-  hanzi: MyString
-  translation: MyString
-  examples: MyText
+yi:
+  id: 2658
+  pinyin: yī
+  hanzi: 一
+  translation: ! '[yī] one, a little; 第一 dì-yī first, primary; 看一看 kànyīkàn have a (quick)
+    look at
+    [yí] (used before tone #4); 一个人 yí gè rén one person; 一定 yídìng certain; 一样 yíyàng
+    same; 一月yíyuè January
+    [yì] (used before tones #2 and #3); 一点儿 yìdiǎnr a little; 一些 yìxiē '
+  created_at: 2011-05-29 16:14:29.000000000Z
+  updated_at: 2011-05-30 11:32:50.000000000Z
+  freq: 0
+  norm_pinyin: yi1
+  tone: 1
+  hsk_level: 1

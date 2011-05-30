@@ -1,12 +1,17 @@
-- title t('.title')
+- title (@selection.character.pinyin + " " + @selection.character.hanzi)
 = render "tasks"
-%p
-  %b User:
-  = @selection.user_id
-%p
-  %b Character:
-  = @selection.character_id
 
-= link_to 'Edit', edit_selection_path(@selection)
-\|
-= link_to 'Back', selections_path
+
+= render @selection.character
+
+%h2 Fortschritt
+- EXERCISES.each do |exercise|
+  %h3=exercise[:name]
+  .half
+    Stufe:
+    =@selection.send("level_#{exercise[:id]}")
+  .half
+    Letzter Besuch:
+    =distance_of_time_in_words_to_now(@selection.send("next_visit_#{exercise[:id]}")) rescue "Niemals"
+
+

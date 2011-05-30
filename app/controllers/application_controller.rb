@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   include ControllerAuthentication
-  protect_from_forgery
+  #protect_from_forgery
 
   rescue_from CanCan::AccessDenied do |exception|
     #exception.subject -> resource, .action -> :edit ...

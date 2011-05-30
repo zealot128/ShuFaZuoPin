@@ -1,5 +1,40 @@
-/* 
+/*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+body #content {
+  font-size: 100%;
+  font-family: Helvetica,Verdana,Arial,sans-serif;
+}
+#exercise-1 {
+  #hanzi-solution {
+    font-size: 200px;
+    line-height: 1.5;
+    float: left;
+    padding: 20px;
+
+  }
+  #hanzi-canvas {
+    float: left;
+
+
+  }
+}
+.clear {
+  clear: both;
+}
+
+.button {
+  display: block;
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  &:hover {
+    background: #ccc;
+    text-decoration: none;
+
+  }
+}

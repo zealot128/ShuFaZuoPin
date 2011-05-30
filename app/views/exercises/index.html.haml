@@ -1,5 +1,9 @@
 - title t('.exercises')
 = render "tasks"
-Los gehts!
 
 = link_to t(".add"), new_selection_path, :rel => :facebox
+
+%p(style="font-size: 1.8em;")
+  - current_user.selections.each do |s|
+    = link_to s.character.hanzi, s
+    ,

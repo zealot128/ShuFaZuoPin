@@ -1,6 +1,10 @@
 - set_tasks do |task|
-  - if current_user.present?
-    - task.add_task t("tasks.index"), :url => "/exercises", :active => params[:action] == "index"
-  - else
-    - task.add_task t("tasks.login"), :url => login_path
+  - task.add_task t("tasks.index"), :url => "/exercises", :active => params[:action] == "index"
+  - task.add_task t("tasks.new_word"), :url => new_selection_path, :active => params[:action] == "new", :rel => :facebox
+  - if params[:action] == "show"
+    - if can? :edit, Character
+      - task.add_task t("tasks.edit"), :url => edit_character_path, :active => params[:action] == "new", :rel => :facebox
+    -# task.add_task t("tasks.delete"), :url => , :active => params[:action] == "new", :rel => :facebox
+
+
 

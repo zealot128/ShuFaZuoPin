@@ -15,6 +15,9 @@ gem "formtastic"
 gem "shoulda"
 gem 'irbtools', :require => 'irbtools/configure'
 gem "tabulatr"
+gem "hpricot"
+gem "unicode_utils"
+
 
 
 # Asset template engines

@@ -6,11 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Character.delete_all
+#Character.delete_all
 items = YAML.load open("db/hanzi.yml")
 items.each do |item|
-  char = Character.new
-  char.hanzi =  item[:char]
+  char = Character.find_or_initialize_by_hanzi item[:char]
+  next unless char.new_record?
   char.pinyin = item[:pinyin]
   char.norm_pinyin = item[:normified_pinyin]
   char.translation = item[:info].join("\n")
@@ -18,3 +18,4 @@ items.each do |item|
   char.freq = item[:level]
   char.save
 end
+

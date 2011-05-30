@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110529184528) do
+ActiveRecord::Schema.define(:version => 20110530114204) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
@@ -21,7 +21,12 @@ ActiveRecord::Schema.define(:version => 20110529184528) do
     t.integer  "freq"
     t.string   "norm_pinyin"
     t.integer  "tone"
+    t.integer  "hsk_level",   :default => -1
   end
+
+  add_index "characters", ["hsk_level"], :name => "index_characters_on_hsk_level"
+  add_index "characters", ["norm_pinyin"], :name => "index_characters_on_norm_pinyin"
+  add_index "characters", ["pinyin"], :name => "index_characters_on_pinyin"
 
   create_table "selections", :force => true do |t|
     t.integer  "character_id"
@@ -35,6 +40,15 @@ ActiveRecord::Schema.define(:version => 20110529184528) do
     t.datetime "next_visit_2"
     t.datetime "next_visit_3"
   end
+
+  add_index "selections", ["character_id"], :name => "index_selections_on_character_id"
+  add_index "selections", ["level_1"], :name => "index_selections_on_level_1"
+  add_index "selections", ["level_2"], :name => "index_selections_on_level_2"
+  add_index "selections", ["level_3"], :name => "index_selections_on_level_3"
+  add_index "selections", ["next_visit_1"], :name => "index_selections_on_next_visit_1"
+  add_index "selections", ["next_visit_2"], :name => "index_selections_on_next_visit_2"
+  add_index "selections", ["next_visit_3"], :name => "index_selections_on_next_visit_3"
+  add_index "selections", ["user_id"], :name => "index_selections_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"

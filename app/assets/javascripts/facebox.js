@@ -305,8 +305,6 @@
     })
     hideOverlay()
   })
+  $('a[rel*=facebox]').facebox();
 
 })(jQuery);
-jQuery(document).ready(function($) {
-    $('a[rel*=facebox]').facebox()
-})

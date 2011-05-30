@@ -1,0 +1,14 @@
+#hanzi
+  = character.hanzi
+#pinyin
+  = character.pinyin
+  (
+  = character.norm_pinyin
+  )
+
+%ul#translation
+  - character.translation_list.each do |tr|
+    %li
+      - tr.split(";").each do |td|
+        = td
+        %br

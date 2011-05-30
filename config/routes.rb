@@ -1,10 +1,8 @@
 Shufazuopin::Application.routes.draw do
   resources :selections
 
-  get "exercises/index"
-  get "exercises/add_word"
-
   resources :characters
+  resources :exercises
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 

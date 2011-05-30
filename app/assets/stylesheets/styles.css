@@ -116,3 +116,13 @@ a:hover {
 }
 
 p { margin-left: 1em; }
+.notice {
+  background: none repeat scroll 0 0 #ddffdd;
+  border: 1px solid #aaeeaa;
+  padding: 5px;
+}
+.alert {
+  background: none repeat scroll 0 0 #ffdddd;
+  border: 1px solid #eeaaaa;
+  padding: 5px;
+}
