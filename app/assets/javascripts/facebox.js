@@ -305,6 +305,6 @@
     })
     hideOverlay()
   })
-  $('a[rel*=facebox]').facebox();
 
 })(jQuery);
+

@@ -34,5 +34,6 @@ jQuery ->
     'width': dimension['width'],
     'height': dimension['height']
   }
-  draw()
+  $('#hanzi-canvas').each ->
+    draw()
 
