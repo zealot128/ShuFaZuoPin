@@ -1,9 +1,9 @@
-#hanzi
+#hanzi{:class => "hanzi-tone-#{character.tone}"}
   = character.hanzi
 #pinyin
   = character.pinyin
   (
-  = character.norm_pinyin
+  = tonize character.norm_pinyin
   )
 
 %ul#translation

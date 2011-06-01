@@ -21,6 +21,11 @@ body #content {
   .highlighted {
     color: red;
   }
+  #pinyin {
+    font-size: 200%;
+    line-height: 1.5;
+
+  }
 }
 .solve {
   display: none;
@@ -32,6 +37,21 @@ body #content {
   position: fixed;
   right: 20px;
   top: 40%;
+  .highlighted {
+    background: yellow;
+  }
+  #solve {
+    text-align: center;
+  }
+  #wrong, #right, #mamahuhu {
+    width:23%;
+    margin: 3px;
+    float: left;
+  }
+  #mamahuhu {
+    width: 30%;
+    padding: 5px 1px;
+  }
 }
 
 
@@ -48,3 +68,43 @@ body #content {
 
   }
 }
+
+.hanzi-list {
+  font-size: 1.8em;
+  line-height: 1.4;
+  margin-top: 0;
+
+}
+
+$tone1: #007de7;
+$tone2: #3bf800;
+$tone3: #e7e500;
+$tone4: #f80300;
+.tone-1 {
+  background: url(/images/tone-1.thumb.png) no-repeat center top;
+  padding-top: 10px;
+  border-bottom: 3px solid $tone1;
+}
+.hanzi-tone-1 { color: $tone1; }
+
+.tone-2 {
+  background: url(/images/tone-2.thumb.png) no-repeat center top;
+  padding-top: 10px;
+  border-bottom: 3px solid $tone2;
+}
+.hanzi-tone-2 { color: $tone2; }
+
+.tone-3 {
+  background: url(/images/tone-3.thumb.png) no-repeat center top;
+  padding-top: 10px;
+  border-bottom: 3px solid $tone3;
+}
+.hanzi-tone-3 { color: $tone3; }
+
+.tone-4 {
+  background: url(/images/tone-4.thumb.png) no-repeat center top;
+  padding-top: 10px;
+  border-bottom: 3px solid $tone4;
+}
+.hanzi-tone-4 { color: $tone4; }
+

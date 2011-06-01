@@ -44,3 +44,25 @@ jQuery ->
       hanzi = $('#hanzi-solution').text().trim()
       $('.placeholder').html(hanzi).addClass("highlighted")
       false
+    $(document).bind 'keypress', (x) ->
+      key=x.charCode
+      switch key
+        when 119 then $('#solve').addClass("highlighted").click()
+        when 97 then $('#wrong').addClass("highlighted").click()
+        when 115 then $('#mamahuhu').addClass("highlighted").click()
+        when 100 then $('#right').addClass("highlighted").click()
+
+      window.setTimeout '$("#buttons .highlighted").removeClass("highlighted")', 500
+      false
+    #$(document).bind 'keypress', 'a', ->
+      #$('#right').addClass("highlighted")
+      #$('#right').click()
+      #false
+    #$(document).bind 'keypress', 'd', ->
+      #$('#wrong').addClass("highlighted")
+      #$('#wrong').click()
+      #false
+    #$(document).bind 'keypress', 's', ->
+      #$('#mamhuhu').addClass("highlighted")
+      #$('#mamhuhu').click()
+      #false

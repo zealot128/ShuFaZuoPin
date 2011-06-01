@@ -11,7 +11,8 @@
     Stufe:
     =@selection.send("level_#{exercise[:id]}")
   .half
-    Letzter Besuch:
-    =distance_of_time_in_words_to_now(@selection.send("next_visit_#{exercise[:id]}")) rescue "Niemals"
+    Nächster geplanter Besuch:
+    = next_visit_words(@selection, exercise[:id])
 
+= link_to "Entfernen", @selection, :class => :button, :method => :delete
 

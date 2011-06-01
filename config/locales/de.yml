@@ -31,7 +31,7 @@ de:
       due: "Anzahl Überfällig/Gesamt %{due}/%{total}"
       right: "Richtig"
       wrong: "Falsch"
-      close: "Geraten/Gerade so"
+      close: "Geraten"
       solve: "Lösen"
   formtastic:
     submit: Speichern

@@ -4,7 +4,7 @@
 
 #exercise-1
   #task
-    %h2
+    %span#pinyin{:class => "tone-#{@selection.character.tone}"}
       =@selection.character.pinyin
     %ul
       - @selection.character.translation_html.html_safe.split(";").each do |char|
@@ -13,16 +13,17 @@
 
 
   #hanzi-solution.solve
-    = @selection.character.hanzi
+    %div{:class => "hanzi-tone-#{@selection.character.tone}"}
+      = @selection.character.hanzi
   .clear
 
 #buttons
   = link_to t(".solve"), '#', :class => :button, :id => "solve"
   %br
   .solve
-    = link_to t('.right'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button
-    = link_to t('.wrong'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :wrong), :method => :put, :class => :button
-    = link_to t('.close'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :mamahuhu), :method => :put, :class => :button
+    = link_to t('.wrong'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :wrong), :method => :put, :class => :button, :id => "wrong"
+    = link_to t('.close'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :mamahuhu), :method => :put, :class => :button, :id => "mamahuhu"
+    = link_to t('.right'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button, :id => "right"
   .clear
 #info
   = t ".due", :due => Selection.count_due(@exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
