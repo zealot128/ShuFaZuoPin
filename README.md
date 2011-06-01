@@ -11,10 +11,17 @@ For pronounciation I am using the color codes proposed by my Chinese learning bo
 * green for 2nd tone
 * yellow for 3rd tone
 * red for 4th tone
+* these can be changed in app/assets/stylesheets/selections.css.scss
 
 for my experience, codings the hanzi characters in the respective color is effective for learning correct pronounciation.
 
 There are some rake tasks for importing a lot of basic hanzi characters from some webservices. Use that if needed to include a whole bunch of characters, make it very convienient to add that to your list
+
+For a efficient learning, there are hotkeys for interacting with the software in training:
+* w: solve
+* a: wrong (-1 level)
+* s: not quiet right, but also totally not wrong :) (+-0 level)
+* d: right (+1 level)
 
 ## Todo/plans
 

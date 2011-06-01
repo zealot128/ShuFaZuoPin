@@ -4,6 +4,11 @@
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
 
+$tone1: #007de7;
+$tone2: #3bf800;
+$tone3: #e7e500;
+$tone4: #f80300;
+
 body #content {
   font-size: 100%;
   font-family: Helvetica,Verdana,Arial,sans-serif;
@@ -76,10 +81,6 @@ body #content {
 
 }
 
-$tone1: #007de7;
-$tone2: #3bf800;
-$tone3: #e7e500;
-$tone4: #f80300;
 .tone-1 {
   background: url(/images/tone-1.thumb.png) no-repeat center top;
   padding-top: 10px;
