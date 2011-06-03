@@ -152,6 +152,7 @@ GEM
     unicode_utils (1.0.0)
     whiny_hash (0.0.2)
     wirb (0.3.1)
+    yaml_db (0.2.1)
     zucker (11)
 
 PLATFORMS
@@ -177,3 +178,4 @@ DEPENDENCIES
   turn
   uglifier
   unicode_utils
+  yaml_db

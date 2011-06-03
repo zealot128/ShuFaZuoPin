@@ -41,5 +41,6 @@ group :test do
   gem 'turn', :require => false
   gem "shoulda"
 end
+gem "yaml_db"
 gem "bcrypt-ruby", :require => "bcrypt"
 gem "mocha", :group => :test
