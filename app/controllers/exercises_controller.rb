@@ -29,6 +29,8 @@ class ExercisesController < ApplicationController
         @selection.save
         message = "Wort falsch"
       when "mamahuhu" then
+        @selection.right(ex_id)
+        @selection.wrong(ex_id)
         message = "Nicht richtig gewusst? Wort-Stufe hat sich nicht verändert"
       else raise "Type not found"
     end

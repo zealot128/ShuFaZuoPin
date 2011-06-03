@@ -39,6 +39,9 @@ jQuery ->
       }
       window.setTimeout("window.draw()",200)
       $('#hanzi-canvas').bind 'click', ->  window.draw()
+    if document.location.pathname.match(/exercises\/2/)
+      hanzi = $('#hanzi').text().trim()
+      $('.placeholder').html(hanzi).addClass("highlighted").removeClass("placeholder")
 
     $('#solve').click ->
       $('.solve').fadeIn()

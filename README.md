@@ -32,6 +32,7 @@ For a efficient learning, there are hotkeys for interacting with the software in
 * design could be pimped
 * caching if necessary (until now works fine)
 * integrating 3rd party services for more information about words/character etymology and radicals
+* SQL Caching for list views
 
 ## Collaboration
 
