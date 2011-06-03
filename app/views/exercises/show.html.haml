@@ -1,23 +1,10 @@
 - title @exercise[:name]
-- title ": " + @selection.character.pinyin
 = render "tasks"
 
-#exercise-1
-  #task
-    %span#pinyin{:class => "tone-#{@selection.character.tone}"}
-      =@selection.character.pinyin
-    %ul
-      - @selection.character.translation_html.html_safe.split(";").each do |char|
-        %li=char
-    #hanzi-canvas
-
-
-  #hanzi-solution.solve
-    %div{:class => "hanzi-tone-#{@selection.character.tone}"}
-      = @selection.character.hanzi
-  .clear
+= render :partial => "exercise_#{@exercise[:id]}", :locals => { :character => @selection.character }
 
 #buttons
+  = progress_bar @exercise[:id], current_user
   = link_to t(".solve"), '#', :class => :button, :id => "solve"
   %br
   .solve
@@ -26,7 +13,7 @@
     = link_to t('.right'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button, :id => "right"
   .clear
 #info
-  = t ".due", :due => Selection.count_due(@exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
+  =# t ".due", :due => Selection.count_due(@exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
 
 
 

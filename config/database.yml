@@ -19,7 +19,7 @@ test:
   password: shufa
 
 production:
-  adapter: sqlite3
-  database: db/production.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  database: shufa_live
+  username: shufa
+  password: shufa

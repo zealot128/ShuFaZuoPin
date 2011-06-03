@@ -1,0 +1,11 @@
+#exercise-2
+  #task
+    %span#hanzi{"data-tone" => character.tone}
+      =character.hanzi
+    .solve
+      %span{:class => "tone-#{character.tone}"}
+        =character.pinyin
+      %ul
+        - character.translation_html.html_safe.split(";").each do |char|
+          %li=char
+  .clear

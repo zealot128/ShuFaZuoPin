@@ -18,6 +18,7 @@ for my experience, codings the hanzi characters in the respective color is effec
 There are some rake tasks for importing a lot of basic hanzi characters from some webservices. Use that if needed to include a whole bunch of characters, make it very convienient to add that to your list
 
 For a efficient learning, there are hotkeys for interacting with the software in training:
+
 * w: solve
 * a: wrong (-1 level)
 * s: not quiet right, but also totally not wrong :) (+-0 level)

@@ -1,0 +1,15 @@
+- title ": " + @selection.character.pinyin
+#exercise-1
+  #task
+    %span#pinyin{:class => "tone-#{character.tone}"}
+      =character.pinyin
+    %ul
+      - character.translation_html.html_safe.split(";").each do |char|
+        %li=char
+    #hanzi-canvas
+
+
+  #hanzi-solution.solve
+    %div{:class => "hanzi-tone-#{character.tone}"}
+      = character.hanzi
+  .clear

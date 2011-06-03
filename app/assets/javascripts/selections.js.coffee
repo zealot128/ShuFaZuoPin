@@ -28,21 +28,25 @@ window.draw = ->
       ctx.stroke()
 
 jQuery ->
-  $('#hanzi-canvas').scratchpad {
-    'borderWidth': 3,
-    'borderRadius': 10,
-    'width': dimension['width'],
-    'height': dimension['height']
-  }
-  $('#hanzi-canvas').bind 'click', ->  window.draw()
 
-  if document.location.pathname.match(/exercises\/1/)
-    window.setTimeout("window.draw()",200)
+  if document.location.pathname.match(/exercises\/\d/)
+    if document.location.pathname.match(/exercises\/1/)
+      $('#hanzi-canvas').scratchpad {
+        'borderWidth': 3,
+        'borderRadius': 10,
+        'width': dimension['width'],
+        'height': dimension['height']
+      }
+      window.setTimeout("window.draw()",200)
+      $('#hanzi-canvas').bind 'click', ->  window.draw()
 
     $('#solve').click ->
       $('.solve').fadeIn()
       hanzi = $('#hanzi-solution').text().trim()
       $('.placeholder').html(hanzi).addClass("highlighted")
+      $('#hanzi').each ->
+        tone = $(this).data('tone')
+        $(this).addClass("hanzi-tone-#{tone}")
       false
     $(document).bind 'keypress', (x) ->
       key=x.charCode
@@ -54,15 +58,3 @@ jQuery ->
 
       window.setTimeout '$("#buttons .highlighted").removeClass("highlighted")', 500
       false
-    #$(document).bind 'keypress', 'a', ->
-      #$('#right').addClass("highlighted")
-      #$('#right').click()
-      #false
-    #$(document).bind 'keypress', 'd', ->
-      #$('#wrong').addClass("highlighted")
-      #$('#wrong').click()
-      #false
-    #$(document).bind 'keypress', 's', ->
-      #$('#mamhuhu').addClass("highlighted")
-      #$('#mamhuhu').click()
-      #false
