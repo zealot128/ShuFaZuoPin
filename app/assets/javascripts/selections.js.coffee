@@ -43,6 +43,24 @@ jQuery ->
       hanzi = $('#hanzi').text().trim()
       $('.placeholder').html(hanzi).addClass("highlighted").removeClass("placeholder")
 
+
+    $('.tooltip').qtip {
+      content: 'Translating...',
+      style: {
+        tip: true,
+        name: 'light'
+      },
+      api: {
+        onRender: ->
+          me = this
+          hanzi = $(me.elements.target).html().trim()
+          link = "/exercises/tooltip"
+          $.get link, "q=#{hanzi}", (data)->
+            me.updateContent(data)
+        }
+      }
+
+
     $('#solve').click ->
       $('.solve').fadeIn()
       hanzi = $('#hanzi-solution').text().trim()
@@ -50,14 +68,18 @@ jQuery ->
       $('#hanzi').each ->
         tone = $(this).data('tone')
         $(this).addClass("hanzi-tone-#{tone}")
-      false
-    $(document).bind 'keypress', (x) ->
-      key=x.charCode
-      switch key
-        when 119 then $('#solve').addClass("highlighted").click()
-        when 97 then $('#wrong').addClass("highlighted").click()
-        when 115 then $('#mamahuhu').addClass("highlighted").click()
-        when 100 then $('#right').addClass("highlighted").click()
+      $(document).bind 'keypress', (x) ->
+        key=x.charCode
+        switch key
+          when 97 then $('#wrong').addClass("highlighted").click()
+          when 115 then $('#mamahuhu').addClass("highlighted").click()
+          when 100 then $('#right').addClass("highlighted").click()
+        false
+    $(document).bind "keypress", (x) ->
+      if 119 == x.charCode
+        $('#solve').addClass("highlighted").click()
+
+
 
       window.setTimeout '$("#buttons .highlighted").removeClass("highlighted")', 500
       false

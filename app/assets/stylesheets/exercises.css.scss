@@ -1,5 +1,18 @@
-/* 
+/*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+
+#exercise-list {
+  h2 {
+  }
+  .exercise {
+    width: 45%;
+    float: left;
+    margin-right: 20px;
+  }
+  &:after {
+    clear: both;
+  }
+}

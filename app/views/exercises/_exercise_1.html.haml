@@ -3,9 +3,7 @@
   #task
     %span#pinyin{:class => "tone-#{character.tone}"}
       =character.pinyin
-    %ul
-      - character.translation_html.html_safe.split(";").each do |char|
-        %li=char
+    = translation_list character
     #hanzi-canvas
 
 

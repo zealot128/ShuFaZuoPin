@@ -1,32 +1,34 @@
 - title t('.exercises')
 = render "tasks"
 
-= link_to t(".add"), new_selection_path, :rel => :facebox
-
-%h2=EXERCISES.first[:name]
-%p
-  =EXERCISES.first[:description]
-  %br
-  = t "exercises.show.due", :due => Selection.count_due(1, current_user.id), :total => Selection.where(:user_id => current_user).count
-
 #buttons
   = link_to "HanZi Training starten", exercise_path(1), :class => :button
   = link_to "PinYin Training starten", exercise_path(2), :class => :button
   = link_to "Neues Wort", new_selection_path, :class => :button, :rel => :facebox
-%ul.level-list
-  %li
-    Stufe 0
-    %p.hanzi-list
-      - current_user.selections.where("level_1 = 0 or level_1 is null").each do |s|
-        = link_to s.character.hanzi, s, :rel => :facebox
+#exercise-list
+  - EXERCISES.each do |exercise|
+    .exercise
+      %h2=exercise[:name]
+      %p
+        =exercise[:description]
+        %br
+        = t "exercises.show.due", :due => Selection.count_due(exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
 
-  - (1..8).each do |level|
-    %li
-      = "Stufe #{level}"
-      %p.hanzi-list
-        - pp level
-        - current_user.selections.where("level_1 = #{level}").each do |s|
-          = link_to s.character.hanzi, s, :rel => :facebox
+      %ul.level-list
+        %li
+          Stufe 0
+          %p.hanzi-list
+            - current_user.selections.where("level_#{exercise[:id]} = 0 or level_#{exercise[:id]} is null").includes(:character).each do |s|
+              = link_to s.character.hanzi, s, :rel => :facebox
+
+        - (1..8).each do |level|
+          %li
+            = "Stufe #{level}"
+            %p.hanzi-list
+              - pp level
+              - current_user.selections.where("level_#{exercise[:id]} = #{level}").includes(:character).each do |s|
+                = link_to s.character.hanzi, s, :rel => :facebox
+.clear
 
 
 

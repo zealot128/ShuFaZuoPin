@@ -8,6 +8,11 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def tooltip
+    @character = Character.find_by_hanzi(params[:q])
+    render :layout => false
+  end
+
   def show
     authorize! :read, Character
     @exercise = EXERCISES.find{|i| i[:id] == params[:id].to_i}
@@ -31,6 +36,7 @@ class ExercisesController < ApplicationController
       when "mamahuhu" then
         @selection.right(ex_id)
         @selection.wrong(ex_id)
+        @selection.save
         message = "Nicht richtig gewusst? Wort-Stufe hat sich nicht verändert"
       else raise "Type not found"
     end

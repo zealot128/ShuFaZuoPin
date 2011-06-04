@@ -2,7 +2,9 @@ Shufazuopin::Application.routes.draw do
   resources :selections
 
   resources :characters
-  resources :exercises
+  resources :exercises do
+    get :tooltip, :on => :collection
+  end
 
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
