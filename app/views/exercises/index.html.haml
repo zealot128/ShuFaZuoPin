@@ -15,19 +15,12 @@
         = t "exercises.show.due", :due => Selection.count_due(exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
 
       %ul.level-list
-        %li
-          Stufe 0
-          %p.hanzi-list
-            - current_user.selections.where("level_#{exercise[:id]} = 0 or level_#{exercise[:id]} is null").includes(:character).each do |s|
-              = link_to s.character.hanzi, s, :rel => :facebox
-
-        - (1..8).each do |level|
+        - (0..8).each do |level|
           %li
             = "Stufe #{level}"
             %p.hanzi-list
-              - pp level
-              - current_user.selections.where("level_#{exercise[:id]} = #{level}").includes(:character).each do |s|
-                = link_to s.character.hanzi, s, :rel => :facebox
+              - current_user.selections_of_level(level, exercise[:id]).each do |s|
+                = link_to s.character.hanzi, s, :rel => :facebox, :class => (s.due?(exercise[:id]) ? "due" : "done")
 .clear
 
 

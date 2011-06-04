@@ -20,6 +20,11 @@ class Selection < ActiveRecord::Base
     q.first
   end
 
+  def due?(exercise_id)
+    column = "next_visit_#{exercise_id}"
+    send(column) < DateTime.now rescue true
+  end
+
   def level(exercise)
     send "level_#{exercise[:id]}"
   end

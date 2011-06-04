@@ -3,7 +3,7 @@
   #task
     %span#pinyin{:class => "tone-#{character.tone}"}
       =character.pinyin
-    = translation_list character
+    =placeholderize(character.hanzi, translation_list(character)).html_safe
     #hanzi-canvas
 
 

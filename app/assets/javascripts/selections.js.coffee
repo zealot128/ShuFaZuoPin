@@ -53,7 +53,8 @@ jQuery ->
       api: {
         onRender: ->
           me = this
-          hanzi = $(me.elements.target).html().trim()
+          hanzi = $(me.elements.target).text().trim()
+          return false if hanzi=="_"
           link = "/exercises/tooltip"
           $.get link, "q=#{hanzi}", (data)->
             me.updateContent(data)

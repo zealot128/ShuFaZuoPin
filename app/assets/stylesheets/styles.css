@@ -24,10 +24,13 @@ body {
 #header h1 {
 	margin: 0;
 	padding: 0;
-	color: #eee;
 	font-size: 220%;
 	padding-left: 10px;
 	letter-spacing: -1px;
+        color: #333;
+        text-shadow: -1px 1px 4px white;
+        -webkit-text-shadow: -1px 1px 4px white;
+        -moz-text-shadow: -1px 1px 4px white;
 }
 
 #wrapper-menu {
@@ -51,8 +54,8 @@ body {
 	padding: 0;
 	list-style: none;
 	float: left;
-	border-left: 1px solid #95bc0e;
-	border-right: 1px solid #95bf0f;
+	border-left: 1px solid darkred;
+	border-right: 1px solid darkred;
 	width: 100%;
 }
 
@@ -64,12 +67,14 @@ body {
 	color: #fff;
 	text-decoration: none;
 	float: left;
-	border-right: 1px solid #95bc0e;
+	border-right: 1px solid darkred;
 }
 
 #menu a:hover {
 	background: #b6e41c url('/images/menu-hover.png') repeat-x;
-	color: #485b06;
+        position: relative;
+        text-shadow: 1px 1px 3px #aaa;
+	color: #ddd;
 }
 
 #content {

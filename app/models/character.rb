@@ -6,6 +6,8 @@ class Character < ActiveRecord::Base
     where('pinyin like ? or norm_pinyin like ? or hanzi like ?', *(["#{term}%"] * 3)).limit(15).order(:freq)
   end
 
+
+
   def translation_html
     translation_list.map{|translation|
       translation.gsub( self.hanzi, "<span class='placeholder'>_</span>")

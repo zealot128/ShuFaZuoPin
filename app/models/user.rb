@@ -22,6 +22,14 @@ class User < ActiveRecord::Base
     return user if user && user.password_hash == user.encrypt_password(pass)
   end
 
+  def selections_of_level(level, exercise_id)
+    if level == 0
+      self.selections.where("level_#{exercise_id} = 0 or level_#{exercise_id} is null").includes(:character)
+    else
+      self.selections.where("level_#{exercise_id} = #{level}").includes(:character)
+    end
+  end
+
   def encrypt_password(pass)
     BCrypt::Engine.hash_secret(pass, password_salt)
   end
