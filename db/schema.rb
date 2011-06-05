@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110530114204) do
+ActiveRecord::Schema.define(:version => 20110605131738) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20110530114204) do
     t.datetime "next_visit_1"
     t.datetime "next_visit_2"
     t.datetime "next_visit_3"
+    t.text     "stats"
   end
 
   add_index "selections", ["character_id"], :name => "index_selections_on_character_id"

@@ -3,6 +3,7 @@ class Selection < ActiveRecord::Base
   belongs_to :character
   attr_accessor :search
   attr_accessible :character_id
+  serialize :stats
 
   MAX_LEVEL = 8
 
@@ -28,6 +29,14 @@ class Selection < ActiveRecord::Base
   def level(exercise)
     send "level_#{exercise[:id]}"
   end
+
+  def inc_stat(exercise_id, key)
+    self.stats ||= {}
+    self.stats[exercise_id] ||= {}
+    self.stats[exercise_id][key]||= 0
+    self.stats[exercise_id][key]+=1
+  end
+
 
   def next_visit(exercise)
     send "next_visit_#{exercise[:id]}"

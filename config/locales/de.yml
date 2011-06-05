@@ -8,7 +8,11 @@ de:
     deleted: "%{model} erfolgreich gelöscht"
     undeleted: "%{model} erfolgreich wiederhergestellt"
     unpublished: "Dieser Beitrag ist nicht verfügbar"
+    register: "Danke für die Registrierung. Du bist jetzt eingeloggt und kannst sofort loslegen!"
     unvisible: "Diese Stelle ist zur Zeit nicht sichtbar"
+    login_success: "Login erfolgreich"
+    login_failed: "Ungültiges Passwort oder Nutzername"
+    logout_success: Logout erfolgreich
   tasks:
     edit: Bearbeiten
     delete: Löschen
@@ -17,6 +21,14 @@ de:
     hanzi_start: HanZi Training
     pinyin_start: PinYin Training
     new_word: Neues Wort
+  sessions:
+    new:
+      no_account: Noch kein Account?
+      sign_up: Kostenlos registrieren
+      username_or_email: Nutzername oder E-Mail
+      password: Passwort
+      button: Einloggen
+      title: Einloggen
   layouts:
     application:
       login: Einloggen

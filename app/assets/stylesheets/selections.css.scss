@@ -6,7 +6,7 @@
 
 $tone1: #007de7;
 $tone2: #3bf800;
-$tone3: #e7e500;
+$tone3: #D7C500;
 $tone4: #f80300;
 
 body #content {
@@ -140,4 +140,9 @@ body #content {
     line-height: 20px;
     text-align: center;
     }
+}
+#footer {
+  a {
+    color: #ddd;
+  }
 }

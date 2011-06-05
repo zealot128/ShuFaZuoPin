@@ -23,24 +23,28 @@ class ExercisesController < ApplicationController
     authorize! :read, Character
     ex_id = params[:id]
     @selection = current_user.selections.find(params[:selection_id])
+    @selection.inc_stat ex_id, :visited
     message = ""
     case params[:answer]
       when "right" then
         @selection.right(ex_id)
+        @selection.inc_stat ex_id, :correct
         @selection.save
         message = "Wort richtig!"
       when "wrong" then
-        @selection.right(ex_id)
+        @selection.wrong(ex_id)
+        @selection.wrong(ex_id)
         @selection.save
         message = "Wort falsch"
       when "mamahuhu" then
         @selection.right(ex_id)
         @selection.wrong(ex_id)
+        @selection.inc_stat ex_id, :wrong
         @selection.save
         message = "Nicht richtig gewusst? Wort-Stufe hat sich nicht verändert"
       else raise "Type not found"
     end
-    redirect_to exercise_path(ex_id, :notice => message)
+    redirect_to exercise_path(ex_id), :notice => message
   end
 
 end
