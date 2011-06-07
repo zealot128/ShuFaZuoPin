@@ -5,7 +5,7 @@
   - task.add_task t("tasks.pinyin_start"), :url => exercise_path(2), :active => params[:id] == "2"
   - if params[:action] == "show"
     - if can? :edit, Character
-      - task.add_task t("tasks.edit"), :url => edit_character_path, :active => params[:action] == "new", :rel => :facebox
+      - task.add_task t("tasks.edit"), :url => edit_character_path(@selection.character), :active => params[:action] == "new", :rel => :facebox
     -# task.add_task t("tasks.delete"), :url => , :active => params[:action] == "new", :rel => :facebox
 
 
