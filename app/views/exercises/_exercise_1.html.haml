@@ -1,13 +1,16 @@
 - title ": " + @selection.character.pinyin
 #exercise-1
   #task
-    %span#pinyin{:class => "tone-#{character.tone}"}
-      =character.pinyin
+    %span#pinyin
+      =tonize character.norm_pinyin
     =placeholderize(character.hanzi, translation_list(character)).html_safe
-    #hanzi-canvas
+    - if character.is_a? Word
+      #hanzi-canvas{"data-size" => character.hanzi.length}
+    - else
+      #hanzi-canvas
 
 
-  #hanzi-solution.solve
-    %div{:class => "hanzi-tone-#{character.tone}"}
-      = character.hanzi
+  #hanzi
+    #hanzi-solution.solve
+      =general_tonize character.hanzi
   .clear

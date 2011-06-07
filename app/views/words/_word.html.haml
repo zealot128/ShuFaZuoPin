@@ -1,0 +1,18 @@
+#hanzi
+  =general_tonize word.hanzi
+#pinyin
+  = word.pinyin
+  (
+  = tonize word.norm_pinyin
+  )
+
+%ul#translation
+  - word.translation_list.each do |tr|
+    %li
+      - tr.split(";").each do |td|
+        = td
+        %br
+  - if word.zew.present?
+    %li
+      ZEW:
+      = word.zew

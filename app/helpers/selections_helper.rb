@@ -23,6 +23,25 @@ module SelectionsHelper
     content.html_safe
   end
 
+  def general_tonize(hanzi)
+    hanzi.each_char.map do |char|
+      tonize_character(char)
+    end.join("").html_safe
+  end
+
+  def tonize_character(char)
+    char_db = Character.find_by_hanzi(char)
+    selection = char_db.selections.where("user_id = ?", current_user).first
+    tone = char_db.tone
+    if (1..4).include? tone.to_i
+      klass = "tone-#{tone}"
+    else
+      klass = ""
+    end
+    link = link_to char, (selection rescue char), :rel => :facebox
+    content_tag :span, link, :class => klass
+  end
+
   def progress_bar(exercise_id, user)
     total = Selection.where(:user_id => user).count
     done = total - Selection.count_due(exercise_id, user.id)

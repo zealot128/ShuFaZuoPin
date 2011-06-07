@@ -12,6 +12,9 @@
     = link_to t('.close'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :mamahuhu), :method => :put, :class => :button, :id => "mamahuhu"
     = link_to t('.right'), exercise_path(@exercise[:id], :selection_id => @selection.id, :answer => :right), :method => :put, :class => :button, :id => "right"
   .clear
+  #level
+    Level
+    = @selection.level(@exercise)
 #info
   =# t ".due", :due => Selection.count_due(@exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
 

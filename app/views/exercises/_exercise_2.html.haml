@@ -1,10 +1,13 @@
 #exercise-2
   #task
-    %span#hanzi{"data-tone" => character.tone}
-      =character.hanzi
+    %span#hanzi
+      .solve
+        =general_tonize character.hanzi
+      .unsolve
+        = character.hanzi
+
     .solve
-      %span{:class => "tone-#{character.tone}"}
-        =character.pinyin
+      =tonize character.norm_pinyin
       = translation_list character
       = link_to "XiaoMa Definition", "http://www.xiaoma.info/hanzi.php?hz=#{CGI.escape(character.hanzi)}", :target =>"_blank"
   .clear

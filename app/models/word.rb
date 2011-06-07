@@ -1,0 +1,2 @@
+class Word < Character
+end

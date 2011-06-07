@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605131738) do
+ActiveRecord::Schema.define(:version => 20110607153337) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(:version => 20110605131738) do
     t.string   "norm_pinyin"
     t.integer  "tone"
     t.integer  "hsk_level",   :default => -1
+    t.string   "type",        :default => "Character"
+    t.string   "zew"
   end
 
   add_index "characters", ["hsk_level"], :name => "index_characters_on_hsk_level"

@@ -14,31 +14,40 @@ window.draw = ->
       ctx.beginPath()
       width = parseInt(dimension['width'] / 2)
       height = parseInt(dimension['height'] / 2)
-      ctx.moveTo(width, 0)
-      ctx.lineTo(width, dimension['height'])
-      ctx.stroke()
-      ctx.moveTo(0, height)
-      ctx.lineTo(dimension['width'], height)
-      ctx.stroke()
-      ctx.moveTo(0, 0)
-      ctx.lineTo(dimension['width'], dimension['height'])
-      ctx.stroke()
-      ctx.moveTo(dimension['width'], 0)
-      ctx.lineTo(0, dimension['height'])
-      ctx.stroke()
+      for i in [0...window.size]
+          do ->
+            x = dimension['width'] * i
+            ctx.moveTo(width + x, 0)
+            ctx.lineTo(width + x, dimension['height'])
+            ctx.stroke()
+            ctx.moveTo(0 + x, height)
+            ctx.lineTo(dimension['width'] + x, height)
+            ctx.stroke()
+            ctx.moveTo(0 + x, 0)
+            ctx.lineTo(dimension['width'] + x, dimension['height'])
+            ctx.stroke()
+            ctx.moveTo(dimension['width'] + x, 0)
+            ctx.lineTo(0 + x, dimension['height'])
+            ctx.stroke()
+
+            ctx.moveTo(dimension['width'] + x, 0)
+            ctx.lineTo(dimension['width'] + x, dimension['height'])
+            ctx.stroke()
+
 
 jQuery ->
 
   if document.location.pathname.match(/exercises\/\d/)
     if document.location.pathname.match(/exercises\/1/)
+      window.size = $('#hanzi-canvas').data("size") || 1
       $('#hanzi-canvas').scratchpad {
         'borderWidth': 3,
         'borderRadius': 10,
-        'width': dimension['width'],
+        'width': dimension['width'] * window.size,
         'height': dimension['height']
       }
       window.setTimeout("window.draw()",200)
-      $('#hanzi-canvas').bind 'click', ->  window.draw()
+      #$('#hanzi-canvas').bind 'click', ->  window.draw()
     if document.location.pathname.match(/exercises\/2/)
       hanzi = $('#hanzi').text().trim()
       $('.placeholder').html(hanzi).addClass("highlighted").removeClass("placeholder")
@@ -63,22 +72,26 @@ jQuery ->
 
 
     $('#solve').click ->
+      $('.unsolve').hide()
       $('.solve').fadeIn()
       hanzi = $('#hanzi-solution').text().trim()
-      $('.placeholder').html(hanzi).addClass("highlighted")
+      $('.placeholder').html(hanzi).addClass("highlighted") if hanzi?
       $('#hanzi').each ->
         tone = $(this).data('tone')
-        $(this).addClass("hanzi-tone-#{tone}")
+        $(this).addClass("hanzi-tone-#{tone}") if tone?
       $(document).bind 'keypress', (x) ->
+        return true if $('#facebox').is(":visible")
         key=x.charCode
         switch key
           when 97 then $('#wrong').addClass("highlighted").click()
           when 115 then $('#mamahuhu').addClass("highlighted").click()
           when 100 then $('#right').addClass("highlighted").click()
-        false
+        true
     $(document).bind "keypress", (x) ->
+      return true if $('#facebox').is(":visible")
       if 119 == x.charCode
         $('#solve').addClass("highlighted").click()
+      true
 
 
 

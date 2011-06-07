@@ -57,32 +57,61 @@ if false
   end
 end
 
-puts "radicals"
+if false
+  puts "radicals"
 
-doc = Hpricot open( "http://www.xiaoma.info/bushou.php?ext=1")
-elements = doc.search(".radicals tr")
-elements.shift
-news = []
-elements.map{|i| i.search("td").map{|i| i.inner_text}}.each do |nr,hanzi,strokes,pinyin,trans|
-  hanzi = hanzi[0]
-  char = Character.find_or_initialize_by_hanzi(hanzi)
-  if char.new_record?
-    char.pinyin = pinyin
-    alternate = hanzi[1..-1].strip
+  doc = Hpricot open( "http://www.xiaoma.info/bushou.php?ext=1")
+  elements = doc.search(".radicals tr")
+  elements.shift
+  news = []
+  elements.map{|i| i.search("td").map{|i| i.inner_text}}.each do |nr,hanzi,strokes,pinyin,trans|
+    hanzi = hanzi[0]
+    char = Character.find_or_initialize_by_hanzi(hanzi)
+    if char.new_record?
+      char.pinyin = pinyin
+      alternate = hanzi[1..-1].strip
 
-    char.tone = get_tone pinyin
-    char.norm_pinyin = Iconv.conv "US-ASCII//TRANSLIT", "UTF-8", pinyin
-    char.norm_pinyin += char.tone.to_s
-    char.translation = "Radical #{nr}/#{strokes} strokes, #{trans}"
-    if alternate.present?
-      char.translation = alternate + " " + char.translation
+      char.tone = get_tone pinyin
+      char.norm_pinyin = Iconv.conv "US-ASCII//TRANSLIT", "UTF-8", pinyin
+      char.norm_pinyin += char.tone.to_s
+      char.translation = "Radical #{nr}/#{strokes} strokes, #{trans}"
+      if alternate.present?
+        char.translation = alternate + " " + char.translation
+      end
+      news << char
+    else
+
     end
-    news << char
-  else
-
+    char.save
   end
-  char.save
+  pp news
 end
-pp news
+
+puts "compound words"
+(1..4).each do |hsk_level|
+  doc = Hpricot open("http://www.xiaoma.info/compound.php?hsk=#{hsk_level}&order=cp")
+
+  news = []
+  elements = doc.search(".cidian tr").map{|i| i.search("td").map{|i| i.inner_text}}
+  elements.each do |element|
+    char = Word.find_or_initialize_by_hanzi(element[0])
+    char.hsk_level = hsk_level
+    if char.new_record?
+      char.pinyin = element[1]
+      char.tone = get_tone element[1]
+      char.zew = element[2].match(/CL:(.*)/)[1] rescue ""
+
+      pinyin = element[1].split(" ").map{|i| Iconv.conv("US-ASCII//TRANSLIT", "UTF-8", i) + get_tone(i).to_s }.join(" ")
+      char.norm_pinyin = pinyin
+      char.translation = element[2]
+      news << char
+    else
+
+    end
+    char.save
+  end
+  puts "in level #{hsk_level}"
+  pp news
+end
 
 
