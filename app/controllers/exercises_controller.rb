@@ -17,6 +17,7 @@ class ExercisesController < ApplicationController
     authorize! :read, Character
     @exercise = EXERCISES.find{|i| i[:id] == params[:id].to_i}
     @selection = Selection.find_next(current_user.id, params[:id].to_i)
+    redirect_to(root_path, :notice => "Keine Worte angelegt") if @selection.nil?
   end
 
   def update

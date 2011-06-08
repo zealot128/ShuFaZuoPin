@@ -47,7 +47,7 @@ module SelectionsHelper
     total = Selection.where(:user_id => user).count
     due = Selection.count_due(exercise_id, user.id)
     done = total -  due
-    percent = done * 100 / total
+    percent = done * 100 / total rescue 0
     text = t "exercises.show.due", :due => due, :total => total
 
     content_tag :div, :class => :progress_bar, :title => text  do
