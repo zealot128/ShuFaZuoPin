@@ -33,6 +33,9 @@ For a efficient learning, there are hotkeys for interacting with the software in
 * Saving traditional chinese characters in addition to simplified for all the university students. Let user choose in his profile, which one to learn
 * every user can make notes for word. Share or private visibility
 * in case of more users: statistics, highscores etcpp
+* improved first-installation
+  * until now, you have to create the admin user manually with rails console
+  * provide the imported word standard database from cedict. Up to now database is empty on delivery
 
 ## Already done
 
