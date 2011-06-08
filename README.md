@@ -1,11 +1,30 @@
 # ShuFaZuoPin
 
-A Rails 3.1RC1 App for learning chinese language. Currently i18n only for german language, but the translations of all characters is english.
-Users can add words to their learning lists and then start to learn. If passed correctly, the word will advance to the next level, resulting in a later appearance based on spaced learning paradigm.
+A Rails 3.1RC1 App for learning chinese language. Currently i18n only for
+german language, but the translations of all characters is english.  Users can
+add words to their learning lists and then start to learn. If passed correctly,
+the word will advance to the next level, resulting in a later appearance based
+on spaced learning paradigm.
 
-This app can be used by multple users at the same time, sharing the same fundus of characters.
+# Installation
 
-For pronounciation I am using the color codes proposed by my Chinese learning book Liaoliao, which are:
+    git clone https://github.com/zealot128/ShuFaZuoPin
+    cd ShuFaZuoPin
+    bundle
+    cp config/database.yml.example config/database.yml
+    ...
+    bundle
+    migrate
+
+Startup Server, create a user. Go to rails console and make yourself admin.
+Only so, you can edit the Words/Characters, which are shared across all users
+
+
+# Usage
+
+This app can be used by multple users at the same time, sharing the same fundus
+of characters.  For pronounciation I am using the color codes proposed by my
+Chinese learning book *LiaoLiao*, which are:
 
 * blue for 1st tone
 * green for 2nd tone
@@ -13,9 +32,13 @@ For pronounciation I am using the color codes proposed by my Chinese learning bo
 * red for 4th tone
 * these can be changed in app/assets/stylesheets/selections.css.scss
 
-for my experience, codings the hanzi characters in the respective color is effective for learning correct pronounciation.
+For my experience, codings the hanzi characters in the respective color is
+effective for learning correct pronounciation.
 
-There are some rake tasks for importing a lot of basic hanzi characters from some webservices. Use that if needed to include a whole bunch of characters, make it very convienient to add that to your list
+There is a rake tasks for importing a lot of basic hanzi characters from some
+webservices. Use that if needed to include a whole bunch of characters, make it
+very convienient to add that to your list.
+Open *lib/tasks/import.rake* and see by yourself ply.
 
 For a efficient learning, there are hotkeys for interacting with the software in training:
 
@@ -30,12 +53,17 @@ For a efficient learning, there are hotkeys for interacting with the software in
 * english i18n if wished (just a matter of work)
 * caching if necessary (until now works fine)
 * SQL Caching for list views
-* Saving traditional chinese characters in addition to simplified for all the university students. Let user choose in his profile, which one to learn
+* Saving traditional chinese characters in addition to simplified for all the
+  university students. Let user choose in his profile, which one to learn
 * every user can make notes for word. Share or private visibility
 * in case of more users: statistics, highscores etcpp
 * improved first-installation
   * until now, you have to create the admin user manually with rails console
-  * provide the imported word standard database from cedict. Up to now database is empty on delivery
+  * provide the imported word standard database from cedict. Up to now database
+    is empty on delivery
+* User administration features for admin. standard community features etcpp
+
+
 
 ## Already done
 
@@ -49,6 +77,7 @@ For a efficient learning, there are hotkeys for interacting with the software in
 
 ## Disclaimer
 
-This app is a rapid prototype mark 2 from a sunday. Some of the logic aspects are tested where most of the html is untested.
+This app is a rapid prototype mark 2 from a sunday. Some of the logic aspects
+are tested where most of the html is untested. So there is no warranty at all.
 
 
