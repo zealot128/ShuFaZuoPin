@@ -1,4 +1,8 @@
 Shufazuopin::Application.routes.draw do
+  get "pages/index"
+
+  get "pages/impressum"
+
   resources :selections
 
   resources :characters

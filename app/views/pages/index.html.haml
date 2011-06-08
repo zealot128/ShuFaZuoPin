@@ -1,0 +1,29 @@
+- title "ShuFa - Chinesche Zeichen effektiv lernen "
+%h2
+  Was ist ShuFa
+
+%p Eine starke Unterstützung beim Lernen der <strong>chinesischen Zeichen</strong>.
+%p Features:
+%ul
+  %li große Datenbank als Basis um Wörter mit einem Klick zum eigenen Lernbestand hinzuzufügen
+  %li
+    Lernüberwachung mittels
+    =link_to "Spaced Learning", "http://en.wikipedia.org/wiki/Spaced_learning"
+    um Trainingsfortschritt zu messen und zu überwachen
+  %li Schreiben von Chinesischen Zeichen mittels eines Freizeichenfeldes selbst üben
+  %li bis auf Weiteres kostenlos
+  %li Autor der Software ist selber fleißiger Nutzer. Fehler und Vorschläge direkt an info@stefanwienert.net
+
+= render :template => "sessions/new"
+
+%h2 Was kostet das?
+%p
+  ShuFa läuft bis auf Weiteres als Beta, und ist damit <strong>kostenlos</strong>.
+%i Für den Fall, dass der Besucheransturm überhand nimmt, und ich z.B. mehr Server mieten muss, behalte ich mir vor, bestimmte Teile des Service zu limitieren oder mit einer geringen Gebühr zu belangen. Aber auch nur im genannten Szenario. Für diesen Fall ist eine gültige E-Mail-Adresse bei der Anmeldung empfehlenswert.
+
+%h2 Programmiertechnisches
+
+Shufa ist z.Z. OpenSource und kann unter
+= link_to "https://github.com/zealot128/ShuFaZuoPin", "https://github.com/zealot128/ShuFaZuoPin"
+runtergeladen werden. Das ganze ist eine Ruby-on-Rails 3.1 Anwendung.
+
