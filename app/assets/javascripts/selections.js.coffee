@@ -17,19 +17,50 @@ window.draw = ->
       for i in [0...window.size]
           do ->
             x = dimension['width'] * i
+            # middle vertical line
             ctx.moveTo(width + x, 0)
             ctx.lineTo(width + x, dimension['height'])
             ctx.stroke()
+
+            # middle horizontal line
             ctx.moveTo(0 + x, height)
             ctx.lineTo(dimension['width'] + x, height)
             ctx.stroke()
+
+            # left bottom to right upper
             ctx.moveTo(0 + x, 0)
             ctx.lineTo(dimension['width'] + x, dimension['height'])
             ctx.stroke()
+
+            # left top to right bottom
             ctx.moveTo(dimension['width'] + x, 0)
             ctx.lineTo(0 + x, dimension['height'])
             ctx.stroke()
 
+            # inner box
+            margin = 40
+            margin_lux = x + margin
+            margin_luy = margin
+            margin_rux = dimension['width'] + x - margin
+            margin_ruy = margin
+            margin_lbx = x + margin
+            margin_lby = dimension['height'] - margin
+            margin_rbx = dimension['width'] + x - margin
+            margin_rby = dimension['height'] - margin
+            ctx.moveTo(margin_lux, margin_luy)
+            ctx.lineTo(margin_rux, margin_ruy)
+            ctx.stroke()
+            ctx.moveTo(margin_lux, margin_luy)
+            ctx.lineTo(margin_lbx, margin_lby)
+            ctx.stroke()
+            ctx.moveTo(margin_lbx, margin_lby)
+            ctx.lineTo(margin_rbx, margin_rby)
+            ctx.stroke()
+            ctx.moveTo(margin_rux, margin_ruy)
+            ctx.lineTo(margin_rbx, margin_rby)
+            ctx.stroke()
+
+            # seperator
             ctx.moveTo(dimension['width'] + x, 0)
             ctx.lineTo(dimension['width'] + x, dimension['height'])
             ctx.stroke()
@@ -47,7 +78,7 @@ jQuery ->
         'height': dimension['height']
       }
       window.setTimeout("window.draw()",200)
-      #$('#hanzi-canvas').bind 'click', ->  window.draw()
+      $('#hanzi-canvas input').bind 'click', ->  window.draw()
     if document.location.pathname.match(/exercises\/2/)
       hanzi = $('#hanzi').text().trim()
       $('.placeholder').html(hanzi).addClass("highlighted").removeClass("placeholder")

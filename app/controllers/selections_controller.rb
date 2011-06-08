@@ -24,6 +24,8 @@ class SelectionsController < ApplicationController
     @selection.user = current_user
 
     if @selection.save
+      expire_fragment "level-#{current_user.id}-1-0"
+      expire_fragment "level-#{current_user.id}-2-0"
       redirect_to(root_url, :notice => t('flash.created', :model => Selection.model_name.human))
     else
       render :action => "new"
@@ -39,6 +41,8 @@ class SelectionsController < ApplicationController
   end
 
   def destroy
+    expire_fragment "level-#{current_user.id}-1-#{@selection.level_1}"
+    expire_fragment "level-#{current_user.id}-2-#{@selection.level_2}"
     @selection.destroy
     redirect_to(root_url, :notice => t('flash.deleted', :model => Selection.model_name.human))
   end

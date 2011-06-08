@@ -26,13 +26,18 @@ For a efficient learning, there are hotkeys for interacting with the software in
 
 ## Todo/plans
 
-* add multi character words
 * problem-list and statistics, to find out words that are not so save in memory
 * english i18n if wished (just a matter of work)
-* design could be pimped
 * caching if necessary (until now works fine)
-* integrating 3rd party services for more information about words/character etymology and radicals
 * SQL Caching for list views
+* Saving traditional chinese characters in addition to simplified for all the university students. Let user choose in his profile, which one to learn
+* every user can make notes for word. Share or private visibility
+* in case of more users: statistics, highscores etcpp
+
+## Already done
+
+* add multi character words
+* design could be pimped
 
 ## Collaboration
 

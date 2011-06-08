@@ -51,6 +51,8 @@ de:
       create: "%{model} anlegen"
       update: "Aktualisieren"
     hints:
+      selection:
+        search: "In der Datenbank suchen -> 'ni hao' oder 'hao3'"
       user:
         name: "Ihr Loginname darf nur Buchstaben und Zahlen beinhalten"
         email: "Eine gültige E-Mail Adresse zur Versendung von wichtigen Kontoinformation."
@@ -71,4 +73,10 @@ de:
         duration: Dauer der Stellenausschreibung ab Start-Datum
         category_list: "Die globale Stellenbörse, in der der Job sichtbar sein soll. Geben Sie mindestens eine Kategorie an."
         description: "Geben Sie hier eine aussagekräftige Beschreibung der Stelle an. Nutzen Sie zwischenüberschriften und Listen, um das Interesse der Besucher zu wecken"
+  activerecord:
+    models:
+      selection: Wort
+    attributes:
+      selection:
+        search: Suche
 

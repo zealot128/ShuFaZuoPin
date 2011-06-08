@@ -23,10 +23,11 @@ class User < ActiveRecord::Base
   end
 
   def selections_of_level(level, exercise_id)
+    default = self.selections.includes(:character)
     if level == 0
-      self.selections.where("level_#{exercise_id} = 0 or level_#{exercise_id} is null").includes(:character)
+      default.where("level_#{exercise_id} = 0 or level_#{exercise_id} is null")
     else
-      self.selections.where("level_#{exercise_id} = #{level}").includes(:character)
+      default.where("level_#{exercise_id} = #{level}")
     end
   end
 
