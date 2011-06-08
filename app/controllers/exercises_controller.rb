@@ -37,12 +37,12 @@ class ExercisesController < ApplicationController
       when "wrong" then
         @selection.wrong(ex_id)
         @selection.wrong(ex_id)
+        @selection.inc_stat ex_id, :wrong
         @selection.save
         message = "Wort falsch"
       when "mamahuhu" then
         @selection.right(ex_id)
         @selection.wrong(ex_id)
-        @selection.inc_stat ex_id, :wrong
         @selection.save
         message = "Nicht richtig gewusst? Wort-Stufe hat sich nicht verändert"
       else raise "Type not found"

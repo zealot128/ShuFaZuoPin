@@ -41,8 +41,8 @@ class SelectionsController < ApplicationController
   end
 
   def destroy
-    expire_fragment "level-#{current_user.id}-1-#{@selection.level_1}"
-    expire_fragment "level-#{current_user.id}-2-#{@selection.level_2}"
+    expire_fragment( "level-#{current_user.id}-1-#{@selection.level_1}" )
+    expire_fragment( "level-#{current_user.id}-2-#{@selection.level_2}" )
     @selection.destroy
     redirect_to(root_url, :notice => t('flash.deleted', :model => Selection.model_name.human))
   end

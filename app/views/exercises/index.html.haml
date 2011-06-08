@@ -18,7 +18,7 @@
 
       %ul.level-list
         - (0..8).each do |level|
-          - cache "level-#{current_user.id}-#{level}" do
+          - cache "level-#{current_user.id}-#{exercise[:id]}-#{level}" do
             %li
               = "Stufe #{level}"
               %p.hanzi-list
