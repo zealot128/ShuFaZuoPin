@@ -27,3 +27,14 @@
   -moz-user-select: none;
   user-select: none;
 }
+
+#exercise-list {
+  .ex-progress {
+    position: relative;
+  }
+  .progress_bar {
+    position: absolute;
+    bottom: 16px;
+    left: 150px;
+  }
+}

@@ -9,10 +9,12 @@
   - EXERCISES.each do |exercise|
     .exercise
       %h2=exercise[:name]
+      .ex-progress
+        = progress_bar(exercise[:id], current_user)
       %p
         =exercise[:description]
         %br
-        = t "exercises.show.due", :due => Selection.count_due(exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
+        =# t "exercises.show.due", :due => Selection.count_due(exercise[:id], current_user.id), :total => Selection.where(:user_id => current_user).count
 
       %ul.level-list
         - (0..8).each do |level|

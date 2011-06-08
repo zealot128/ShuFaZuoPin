@@ -45,10 +45,12 @@ module SelectionsHelper
 
   def progress_bar(exercise_id, user)
     total = Selection.where(:user_id => user).count
-    done = total - Selection.count_due(exercise_id, user.id)
+    due = Selection.count_due(exercise_id, user.id)
+    done = total -  due
     percent = done * 100 / total
+    text = t "exercises.show.due", :due => due, :total => total
 
-    content_tag :div, :class => :progress_bar do
+    content_tag :div, :class => :progress_bar, :title => text  do
       html = content_tag :strong, ( "#{done} / #{total}" )
       html +=content_tag :span, :style => "width: #{percent}%;" do
         "&nbsp;".html_safe
