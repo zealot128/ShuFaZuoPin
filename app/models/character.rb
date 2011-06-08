@@ -3,7 +3,7 @@ class Character < ActiveRecord::Base
   has_many :selections
 
   def self.find_for_ajax(term)
-    where('pinyin like ? or norm_pinyin like ? or hanzi like ?', *(["#{term}%"] * 3)).limit(15).order(:freq)
+    where('pinyin like ? or norm_pinyin like ? or hanzi like ?', *(["#{term}%"] * 3)).limit(15).order("length(hanzi), freq")
   end
 
   def translation_html

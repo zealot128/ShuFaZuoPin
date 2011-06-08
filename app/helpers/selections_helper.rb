@@ -23,22 +23,23 @@ module SelectionsHelper
     content.html_safe
   end
 
-  def general_tonize(hanzi)
-    hanzi.each_char.map do |char|
-      tonize_character(char)
+  def general_tonize(hanzi,pinyin)
+    couples = hanzi.each_char.map.zip pinyin.split(" ")
+    couples.map do |char,pinyin|
+      tonize_character(char, pinyin)
     end.join("").html_safe
   end
 
-  def tonize_character(char)
+  def tonize_character(char,pinyin)
     char_db = Character.find_by_hanzi(char)
-    selection = char_db.selections.where("user_id = ?", current_user).first
-    tone = char_db.tone
-    if (1..4).include? tone.to_i
+    tone = pinyin.match(/(\d)/)[1].to_i rescue ""
+
+    if (1..4).include? tone
       klass = "tone-#{tone}"
     else
       klass = ""
     end
-    link = link_to char, (selection rescue char), :rel => :facebox
+    link = link_to char, char_db, :rel => :facebox
     content_tag :span, link, :class => klass
   end
 

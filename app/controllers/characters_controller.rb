@@ -18,6 +18,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.find(params[:id])
+    render :layout => false if request.xhr?
   end
 
   def new
@@ -26,10 +27,12 @@ class CharactersController < ApplicationController
 
   def edit
     @character = Character.find(params[:id])
+    render :layout => false if request.xhr?
   end
 
   def create
-    @character = Character.new(params[:character])
+    para = params[:character] || params[:word]
+    @character = Character.new(para)
 
     if @character.save
       redirect_to(@character, :notice => t('flash.created', :model => Character.model_name.human))
@@ -40,9 +43,11 @@ class CharactersController < ApplicationController
 
   def update
     @character = Character.find(params[:id])
+    para = params[:character] || params[:word]
 
-    if @character.update_attributes(params[:character])
-      redirect_to(@character, :notice => t('flash.updated', :model => Character.model_name.human))
+
+    if @character.update_attributes(para)
+      redirect_to(root_path, :notice => t('flash.updated', :model => Character.model_name.human))
     else
       render :action => "edit"
     end

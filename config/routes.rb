@@ -2,6 +2,7 @@ Shufazuopin::Application.routes.draw do
   resources :selections
 
   resources :characters
+  resources :words, :controller => "characters", :type => "Word"
   resources :exercises do
     get :tooltip, :on => :collection
   end
