@@ -47,6 +47,9 @@ module Shufazuopin
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
 
+    config.sass.load_paths ||= []
+    config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['fancy-buttons'].full_gem_path}/lib/stylesheets"
     # Enable the asset pipeline
     config.assets.enabled = true
   end

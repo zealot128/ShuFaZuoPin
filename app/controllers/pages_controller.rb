@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
     if logged_in?
-      render :controller => :exercises
+      redirect_to exercises_path
     end
   end
 

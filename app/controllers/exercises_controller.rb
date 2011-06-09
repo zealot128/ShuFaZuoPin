@@ -27,7 +27,8 @@ class ExercisesController < ApplicationController
     @selection.inc_stat ex_id, :visited
     message = ""
 
-    expire_fragment "level-#{current_user.id}-#{ex_id}-#{@selection.level(ex_id)}"
+    level = @selection.send("level_#{ex_id}")
+    expire_fragment "level-#{current_user.id}-#{ex_id}-#{level}"
     case params[:answer]
       when "right" then
         @selection.right(ex_id)
@@ -47,7 +48,8 @@ class ExercisesController < ApplicationController
         message = "Nicht richtig gewusst? Wort-Stufe hat sich nicht verändert"
       else raise "Type not found"
     end
-    expire_fragment "level-#{current_user.id}-#{ex_id}-#{@selection.level(ex_id)}"
+    level = @selection.send("level_#{ex_id}")
+    expire_fragment "level-#{current_user.id}-#{ex_id}-#{level}"
 
     redirect_to exercise_path(ex_id), :notice => message
   end

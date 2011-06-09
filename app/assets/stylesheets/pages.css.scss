@@ -1,5 +1,110 @@
-/* 
+/*
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
   You can use Sass (SCSS) here: http://sass-lang.com/
 */
+@import "compass";
+@import "compass/css3/gradient";
+@import "compass/utilities/general/float";
+@import "compass/css3/border-radius";
+@import "compass/css3/opacity";
+@import "compass/css3/images";
+@import "compass/css3/text-shadow";
+@import "fancy-buttons";
+
+$standard-color: #700;
+
+.fancy-button-base {
+  @include fancy-button;
+  @include fancy-button-padding(2px, 12px, 2px);
+  @include fancy-button-colors($standard-color);
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 14px;
+  margin: 10px 5px 5px 0;
+  border-width: 1px;
+}
+
+
+
+#features {
+  padding-left: 20px;
+  li {
+    list-style: none;
+    background: url(/images/glyphs/tick_16.png) no-repeat;
+    margin: 7px 0;
+    padding-left: 25px;
+  }
+}
+.half {
+  width: 50%;
+  float: left;
+  padding-right: 20px;
+}
+
+#content {
+  min-height: 500px;
+}
+
+
+#login {
+  width: 40%;
+  float: left;
+  form {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #555;
+    border-right: 1px solid #555;
+    border-left: 1px solid #ddd;
+}
+  input {
+    display: block;
+    float: none;
+    &[type=text], &[type=password] {
+      font-size: 150%;
+      border: 1px solid darkRed;
+    }
+    &[type=submit] {
+      @extend .fancy-button-base;
+
+    }
+  }
+  a#register {
+      @extend .fancy-button-base;
+      padding: 10px 20px;
+      @include fancy-button-colors(#D65600);
+  }
+}
+
+a.button {
+      @extend .fancy-button-base;
+      //padding: 10px 20px;
+      //@include fancy-button-colors(#D65600);
+      display: block;
+}
+#buttons .solve .button {
+  display: block;
+  text-align: center;
+  &#right { @include fancy-button-colors(#008600); }
+  &#wrong { @include fancy-button-colors(#860000); }
+  &#mamahuhu { @include fancy-button-colors(#868600); }
+}
+#buttons #solve {
+  @include fancy-button-colors(#333);
+}
+#hanzi-canvas input {
+  @extend .fancy-button-base;
+  @include fancy-button-colors(#333);
+}
+.progress_bar {
+  strong {
+    color: white;
+    @include text-shadow(1px 1px #555, -1px -1px #555);
+  }
+  span {
+    @include background-image(linear-gradient(#aaf,  #0000ff));
+    color: white;
+  }
+}
+#level {
+  @include text-shadow(2px 2px white, -2px -2px white);
+}

@@ -1,1 +1,5 @@
-rvm use 1.9.2@rails31beta
+if [[ $EUID -ne 0 ]]; then
+  rvm use 1.9.2@rails31beta
+else
+  rvm use 1.9.2-patched@rails31beta
+fi

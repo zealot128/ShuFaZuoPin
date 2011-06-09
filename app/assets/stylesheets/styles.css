@@ -28,9 +28,9 @@ body {
 	padding-left: 10px;
 	letter-spacing: -1px;
         color: #333;
-        text-shadow: -1px 1px 4px white;
-        -webkit-text-shadow: -1px 1px 4px white;
-        -moz-text-shadow: -1px 1px 4px white;
+        text-shadow: -1px 1px 4px white, 1px -1px 4px white;
+        -moz-shadow: -1px 1px 4px white, 1px -1px 4px white;
+        -webkit-shadow: -1px 1px 4px white, 1px -1px 4px white;
 }
 
 #wrapper-menu {

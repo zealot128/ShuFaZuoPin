@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc1'
+gem 'rails', '3.1.0.rc3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -17,6 +17,11 @@ gem 'irbtools', :require => 'irbtools/configure'
 gem "tabulatr"
 gem "hpricot"
 gem "unicode_utils"
+
+
+gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
+gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem 'fancy-buttons', :require => false
 
 
 
