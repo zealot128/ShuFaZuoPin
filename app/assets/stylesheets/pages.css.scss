@@ -91,6 +91,9 @@ a.button {
 #buttons #solve {
   @include fancy-button-colors(#333);
 }
+#facebox .button {
+  display: inline-block;
+}
 #hanzi-canvas input {
   @extend .fancy-button-base;
   @include fancy-button-colors(#333);

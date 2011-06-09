@@ -1,4 +1,6 @@
 .bundle
+vender/cache/*
+sass-rails.git
 db/*.sqlite3
 log/*.log
 tmp/

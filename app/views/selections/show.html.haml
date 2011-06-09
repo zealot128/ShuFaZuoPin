@@ -7,10 +7,10 @@
 %h2 Fortschritt
 - EXERCISES.each do |exercise|
   %h3=exercise[:name]
-  .half
+  .foo
     Stufe:
     =@selection.send("level_#{exercise[:id]}")
-  .half
+  .bar
     Nächster geplanter Besuch:
     = next_visit_words(@selection, exercise[:id])
 

@@ -19,6 +19,7 @@ gem "hpricot"
 gem "unicode_utils"
 
 
+gem 'sass'
 gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
 gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem 'fancy-buttons', :require => false
@@ -26,7 +27,6 @@ gem 'fancy-buttons', :require => false
 
 
 # Asset template engines
-gem 'sass'
 gem 'coffee-script'
 gem 'uglifier'
 
