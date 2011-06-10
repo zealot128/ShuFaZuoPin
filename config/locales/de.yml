@@ -41,10 +41,10 @@ de:
       add: Wort hinzufügen
     show:
       due: "Anzahl Überfällig/Gesamt %{due}/%{total}"
-      right: "Richtig"
-      wrong: "Falsch"
-      close: "Geraten"
-      solve: "Lösen"
+      right: "Richtig (d)"
+      wrong: "Falsch (a)"
+      close: "Geraten (s)"
+      solve: "Lösen (w)"
   formtastic:
     submit: Speichern
     actions:

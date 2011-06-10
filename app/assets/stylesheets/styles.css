@@ -71,7 +71,7 @@ body {
 }
 
 #menu a:hover {
-	background: #b6e41c url('/images/menu-hover.png') repeat-x;
+	background: darkRed url('/images/menu-hover.png') repeat-x;
         position: relative;
         text-shadow: 1px 1px 3px #aaa;
 	color: #ddd;

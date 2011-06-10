@@ -6,7 +6,7 @@
 
 $tone1: #007de7;
 $tone2: #3bf800;
-$tone3: #D7C500;
+$tone3: #eebe40;
 $tone4: #f80300;
 
 body #content {
@@ -81,7 +81,9 @@ body #content {
   font-size: 1.8em;
   line-height: 1.4;
   margin-top: 0;
-
+}
+#hanzi, .hanzi, #pinyin {
+  text-shadow: 1px 0px 1px #999;
 }
 
 .tone-1 {
