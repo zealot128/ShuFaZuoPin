@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  #rescue_from Exception do |exception|
+    #ExceptionMailer.deliver_exception(exception, self).deliver
+    #throw exception
+  #end
+
+
 end

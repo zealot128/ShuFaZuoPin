@@ -4,7 +4,7 @@
 
 window.removeFlash = ->
   $("#flash .message").fadeOut "slow", ->
-    $(this).css("position","relative").css("left","-2000px")
+    $(this).css("position","relative").css("left","-2000px").show()
 
 jQuery ->
   window.setTimeout("window.removeFlash()", 4000)

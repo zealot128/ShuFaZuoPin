@@ -6,6 +6,8 @@ class PagesController < ApplicationController
   end
 
   def impressum
+    raise RuntimeError
   end
+
 
 end
