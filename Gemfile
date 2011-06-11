@@ -27,6 +27,7 @@ gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch =
 gem 'fancy-buttons', :require => false
 
 
+gem 'hoptoad_notifier'
 
 # Asset template engines
 gem 'coffee-script'

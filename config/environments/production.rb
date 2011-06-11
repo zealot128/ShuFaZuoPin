@@ -5,7 +5,7 @@ Shufazuopin::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
-  config.consider_all_requests_local       = true
+  #config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
@@ -38,7 +38,16 @@ Shufazuopin::Application.configure do
   # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    address: "localhost",
+    domain: "stefanwienert.net",
+    user_name: "info@stefanwienert.net",
+    password: "1qay2wsx",
+    authentication: :plain,
+    enable_starttls_auto: false
+  }
+  config.action_mailer.delivery_method = :smtp
 
   # Enable threaded mode
   # config.threadsafe!
