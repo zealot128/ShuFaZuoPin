@@ -9,7 +9,7 @@ window.autocomplete = () ->
     $('#selection_search').autocomplete {
       source: "/characters.json",
       selectFirst: true,
-      minLength: 3,
+      minLength: 1,
       focus: (event,ui ) ->
           $( "#selection_search").val( ui.item.label )
           false
