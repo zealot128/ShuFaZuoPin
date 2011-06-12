@@ -37,22 +37,37 @@ effective for learning correct pronounciation.
 
 There is a rake tasks for importing a lot of basic hanzi characters from some
 webservices. Use that if needed to include a whole bunch of characters, make it
-very convienient to add that to your list.
-Open *lib/tasks/import.rake* and see by yourself ply.
+very convienient to add that to your list.  Open *lib/tasks/import.rake* and
+see by yourself plz. The rake tasks will maybe not work directly and will need
+adjustments
 
 For a efficient learning, there are hotkeys for interacting with the software in training:
 
 * w: solve
-* a: wrong (-1 level)
+* a: wrong (-2 level)
 * s: not quiet right, but also totally not wrong :) (+-0 level)
 * d: right (+1 level)
+
+Then the word will show up later, according to models/selection.rb
+
+      time = case level
+             when 0 then lambda {5.minutes}
+             when 1 then lambda {10.minutes }
+             when 2 then lambda {60.minutes }
+             when 3 then lambda {6.hour }
+             when 4 then lambda {1.day}
+             when 5 then lambda {7.days}
+             when 6 then lambda {25.days}
+             when 7 then lambda {2.months}
+             when 8 then lambda {7.months}
+             else raise "Error"
+             end
+      time.call.from_now
 
 ## Todo/plans
 
 * problem-list and statistics, to find out words that are not so save in memory
 * english i18n if wished (just a matter of work)
-* caching if necessary (until now works fine)
-* SQL Caching for list views
 * Saving traditional chinese characters in addition to simplified for all the
   university students. Let user choose in his profile, which one to learn
 * every user can make notes for word. Share or private visibility
@@ -62,7 +77,6 @@ For a efficient learning, there are hotkeys for interacting with the software in
   * provide the imported word standard database from cedict. Up to now database
     is empty on delivery
 * User administration features for admin. standard community features etcpp
-* Integration Etymology if applied https://github.com/bastien/ciyuan
 
 
 
@@ -70,6 +84,9 @@ For a efficient learning, there are hotkeys for interacting with the software in
 
 * add multi character words
 * design could be pimped
+* Integration Etymology if applied https://github.com/bastien/ciyuan
+* caching if necessary (until now works fine)
+* SQL Caching for list views
 
 ## Collaboration
 

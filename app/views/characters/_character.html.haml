@@ -5,10 +5,17 @@
   (
   = tonize character.norm_pinyin
   )
-
 %ul#translation
   - character.translation_list.each do |tr|
     %li
       - tr.split(";").each do |td|
         = td
         %br
+  - if character.etymology?
+    %li
+      =t('char.etymology')
+      = character.etymology
+  - if character.phonetic?
+    %li
+      =t('char.phonetic')
+      = character.phonetic
