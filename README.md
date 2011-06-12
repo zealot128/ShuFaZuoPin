@@ -62,6 +62,7 @@ For a efficient learning, there are hotkeys for interacting with the software in
   * provide the imported word standard database from cedict. Up to now database
     is empty on delivery
 * User administration features for admin. standard community features etcpp
+* Integration Etymology if applied https://github.com/bastien/ciyuan
 
 
 

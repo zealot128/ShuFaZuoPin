@@ -16,8 +16,10 @@ gem "shoulda"
 gem 'irbtools', :require => 'irbtools/configure'
 gem "tabulatr"
 gem "hpricot"
+
 gem "unicode_utils"
 
+gem "ciyuan"
 
 gem 'sass'
 gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
@@ -45,7 +47,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
   gem "shoulda"
+  gem "mocha", :group => :test
 end
 gem "yaml_db"
 gem "bcrypt-ruby", :require => "bcrypt"
-gem "mocha", :group => :test
