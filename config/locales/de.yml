@@ -32,6 +32,11 @@ de:
   layouts:
     application:
       login: Einloggen
+  pages:
+    index:
+      tour1: 'Übersicht über die den Übungsfortschritt aller Wörter in beiden Übungen "pinyin" und "hanzi"'
+      tour2: 'Selbst schreiben und dabei Papier sparen! Dank moderner Webtechnologien kann ein Freizeichenfeld dargestellt werden.'
+      tour3: 'Riesige Datenbank (cedict) aller häufigen Chinesischen Wörter ist nur ein Klick entfernt. In Sekundenschnelle können so neue Wörter der eigenen Vokabelliste hinzugefügt werden.'
   characters:
     index:
       title: Alle HanZi-Zeichen

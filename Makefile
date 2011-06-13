@@ -1,8 +1,10 @@
 clean:
 	rm public/assets/*js -rf
 	rm public/assets/*css -rf
-	touch tmp/restart.txt
 deploy:
-
-	rake assets:precompile &
+	git checkout local
+	git rebase local
+	rake assets:precompile
+	touch tmp/restart.txt
+	echo "deploying Done"
 
