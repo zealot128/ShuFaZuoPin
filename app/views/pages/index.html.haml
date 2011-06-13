@@ -24,8 +24,20 @@
   ShuFa läuft bis auf Weiteres als Beta, und ist damit <strong>kostenlos</strong>.
 %i Für den Fall, dass der Besucheransturm überhand nimmt, und ich z.B. mehr Server mieten muss, behalte ich mir vor, bestimmte Teile des Service zu limitieren oder mit einer geringen Gebühr zu belangen. Aber auch nur im genannten Szenario. Für diesen Fall ist eine gültige E-Mail-Adresse bei der Anmeldung empfehlenswert.
 
+%h2 Tour
+
+%p Ein paar Screenshots
+
+= link_to "/images/tour/tour-1.png", :rel => :facebox, :title => t('.tour1') do
+  = image_tag "/images/tour/tour-1-thumb.png", :alt => t('.tour1')
+= link_to "/images/tour/tour-2.png", :rel => :facebox, :title => t('.tour2') do
+  = image_tag "/images/tour/tour-2-thumb.png", :alt => t('.tour2')
+= link_to "/images/tour/tour-3.png", :rel => :facebox, :title => t('.tour3') do
+  = image_tag "/images/tour/tour-3-thumb.png", :alt => t('.tour3')
+
 %h2 Programmiertechnisches
 
+Getestet und entwickelt für Firefox und Chrome in halbwegs aktuellen Versionen.
 Shufa ist z.Z. OpenSource und kann unter
 = link_to "https://github.com/zealot128/ShuFaZuoPin", "https://github.com/zealot128/ShuFaZuoPin"
 runtergeladen werden. Das ganze ist eine Ruby-on-Rails 3.1 Anwendung.
