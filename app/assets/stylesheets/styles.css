@@ -56,7 +56,14 @@ body {
 	float: left;
 	border-left: 1px solid darkred;
 	border-right: 1px solid darkred;
-	width: 100%;
+	width: 60%;
+}
+
+#language-selector {
+  float: right;
+}
+#menu #language-selector .active {
+  color: #aaa;
 }
 
 #menu li { display: inline; }

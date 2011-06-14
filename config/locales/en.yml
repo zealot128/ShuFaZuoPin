@@ -41,6 +41,8 @@ en:
   layouts:
     application:
       login: Log In
+      german: German
+      english: English
   pages:
     index:
       tour1: 'Overview of exercise main window and 2 exercise types hanzi and pinyin'

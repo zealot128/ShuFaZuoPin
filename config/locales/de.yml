@@ -42,6 +42,8 @@ de:
   layouts:
     application:
       login: Einloggen
+      german: Deutsch
+      english: Englisch
   pages:
     index:
       tour1: 'Übersicht über die den Übungsfortschritt aller Wörter in beiden Übungen "pinyin" und "hanzi"'
