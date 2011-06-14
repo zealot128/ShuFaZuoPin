@@ -1,6 +1,14 @@
 de:
   are_you_sure_title: Sind sie sicher?
   edit: Bearbeiten
+  zew_short: "ZEW"
+  exercise_types:
+    - :id: 1
+      :name: HanZi
+      :description: "Schreiben der Zeichen üben"
+    - :id: 2
+      :name: PinYin
+      :description: Aus den Zeichen Bedeutung und Aussprache erraten
   flash:
     error: "Es ist ein Fehler aufgetreten"
     created: "%{model} erfolgreich angelegt"
@@ -18,9 +26,11 @@ de:
     delete: Löschen
     index: Liste
     new: Neu
+    exercises: Übungen
     hanzi_start: HanZi Training
     pinyin_start: PinYin Training
     new_word: Neues Wort
+    new_account: Neuen Account anlegen
   sessions:
     new:
       no_account: Noch kein Account?
@@ -37,19 +47,63 @@ de:
       tour1: 'Übersicht über die den Übungsfortschritt aller Wörter in beiden Übungen "pinyin" und "hanzi"'
       tour2: 'Selbst schreiben und dabei Papier sparen! Dank moderner Webtechnologien kann ein Freizeichenfeld dargestellt werden.'
       tour3: 'Riesige Datenbank (cedict) aller häufigen Chinesischen Wörter ist nur ein Klick entfernt. In Sekundenschnelle können so neue Wörter der eigenen Vokabelliste hinzugefügt werden.'
+      title: "ShuFa - Chinesche Zeichen effektiv lernen"
+      p1:
+        title: "Was ist ShuFa?"
+        answer_html: "Eine starke Unterstützung beim Lernen der <strong>chinesischen Zeichen</strong>."
+        features: "Features:"
+        feature_1_html: "große Datenbank als Basis um Wörter mit einem Klick zum eigenen Lernbestand hinzuzufügen"
+        feature_2_html: "Lernüberwachung ähnlich dem <a href='http://de.wikipedia.org/wiki/Lernkartei'>Lernkarteikartensystem</a> um Trainingsfortschritt zu messen und zu überwachen"
+        feature_3_html: Schreiben von Chinesischen Zeichen mittels eines Freizeichenfeldes selbst üben
+        feature_4_html: bis auf Weiteres kostenlos
+        feature_5_html: Autor der Software ist selber fleißiger Nutzer. Fehler und Vorschläge direkt an info@stefanwienert.net
+      p2:
+        title: "Was kostet das?"
+        answer_html: "ShuFa läuft bis auf Weiteres als Beta, und ist damit <strong>kostenlos</strong>."
+        notice: "Für den Fall, dass der Besucheransturm überhand nimmt, und ich z.B. mehr Server mieten muss, behalte ich mir vor, bestimmte Teile des Service zu limitieren oder mit einer geringen Gebühr zu belangen. Aber auch nur im genannten Szenario. Für diesen Fall ist eine gültige E-Mail-Adresse bei der Anmeldung empfehlenswert."
+      p3:
+        title: Tour
+        answer: Ein paar Screenshots
+      p4:
+        title: Programmiertechnisches
+        answer_html: "Getestet und entwickelt für Firefox und Chrome in halbwegs aktuellen Versionen.
+Shufa ist z.Z. OpenSource und kann unter <a href='https://github.com/zealot128/ShuFaZuoPin'>https://github.com/zealot128/ShuFaZuoPin</a> runtergeladen werden. Das ganze ist eine Ruby-on-Rails 3.1 Anwendung."
+
+
   characters:
     index:
       title: Alle HanZi-Zeichen
+    show:
+      title: "Details zu %{character}"
+  selections:
+    form:
+      fieldset: "Neues Wort der Vokabel-Liste hinzufügen"
+    show:
+      progress: Trainingsfortschritt
+      level: Stufe
+      next_visit: Nächster geplanter Besuch
+      remove: Wort aus Vokabelliste entfernen
   exercises:
     index:
       exercises: Übung
       add: Wort hinzufügen
+      button_hanzi: HanZi Training starten
+      button_pinyin: PinYin Traning starten
+      level: Stufe %{level}
+
     show:
       due: "Anzahl Überfällig/Gesamt %{due}/%{total}"
       right: "Richtig (d)"
       wrong: "Falsch (a)"
       close: "Geraten (s)"
       solve: "Lösen (w)"
+  users:
+    edit:
+      title: Profil aktualisieren
+    new:
+      title: Kostenlos registrieren
+      already_have_account_html: "Hast du schon einen Account? Dann <a href='%{link}'>Einloggen</a>"
+
   formtastic:
     submit: Speichern
     actions:
@@ -81,7 +135,13 @@ de:
   activerecord:
     models:
       selection: Wort
+      user: Nutzer
     attributes:
       selection:
         search: Suche
+      user:
+        username: Nutzername
+        email: E-Mail
+        password: Passwort
+        password_confirmation: Passwort bestätigen
 

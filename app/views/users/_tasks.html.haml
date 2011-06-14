@@ -1,0 +1,8 @@
+- set_tasks do |task|
+  - if current_user.present?
+    - task.add_task t("tasks.exercises"), :url => exercises_path, :active => params[:action] == "index"
+    - task.add_task t("tasks.edit"), :url => edit_user_path(current_user), :active => params[:action] == "edit"
+  - else
+    - task.add_task t("tasks.home"), :url => "/pages/index"
+    - task.add_task t("tasks.new_account"), :url => signup_path, :active => params[:action] == "new"
+

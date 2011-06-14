@@ -2,11 +2,11 @@
 = render "tasks"
 
 #buttons
-  = link_to "HanZi Training starten", exercise_path(1), :class => :button
-  = link_to "PinYin Training starten", exercise_path(2), :class => :button
-  = link_to "Neues Wort", new_selection_path, :class => :button, :rel => :facebox
+  = link_to t('.button_hanzi'), exercise_path(1), :class => :button
+  = link_to t('.button_pinyin'), exercise_path(2), :class => :button
+  = link_to t('.add'), new_selection_path, :class => :button, :rel => :facebox
 #exercise-list
-  - EXERCISES.each do |exercise|
+  - t('exercise_types').each do |exercise|
     .exercise
       %h2=exercise[:name]
       .ex-progress
@@ -20,7 +20,7 @@
         - (0..8).each do |level|
           - cache "level-#{current_user.id}-#{exercise[:id]}-#{level}", :expires_in => (5.minutes * 2.3**level).to_i.seconds do
             %li
-              = "Stufe #{level}"
+              = t('.level', :level => level)
               %p.hanzi-list
                 - current_user.selections_of_level(level, exercise[:id]).each do |s|
                   = link_to s.character.hanzi, s, :rel => :facebox, :class => (s.due?(exercise[:id]) ? "due" : "done")
