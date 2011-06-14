@@ -3,8 +3,8 @@ clean:
 	rm public/assets/*css -rf
 deploy:
 	git checkout local
-	git rebase local
+	git merge master
 	rake assets:precompile
 	touch tmp/restart.txt
-	echo "deploying Done"
-
+	echo "deploying Done, open webbrowser and then:"
+	echo "  git checkout master"
