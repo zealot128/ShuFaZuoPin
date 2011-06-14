@@ -20,6 +20,8 @@ gem "hpricot"
 gem "unicode_utils"
 
 gem "ciyuan"
+gem 'routing-filter'
+
 
 gem 'sass'
 gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'

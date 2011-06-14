@@ -1,5 +1,129 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  are_you_sure_title: Are you sure?
+  edit: Edit
+  zew_short: "Classifier"
+  exercise_types:
+    - :id: 1
+      :name: HanZi
+      :description: "Train writing of characters"
+    - :id: 2
+      :name: PinYin
+      :description: Train reading characters and pronounciation
+  flash:
+    error: "Error occurred"
+    created: "%{model} successfully created"
+    updated: "%{model} successfully updated"
+    deleted: "%{model} successfully deleted"
+    undeleted: "%{model} successfully recovered"
+    unpublished: "This addition is not visible at this time"
+    register: "Thanks for your registration. You are now logged in and ready to start!"
+    login_success: "Login successful"
+    login_failed: "Invalid username or password"
+    logout_success: Logout successful
+  tasks:
+    edit: Edit
+    delete: Delete
+    index: List
+    new: New
+    exercises: Exercises
+    hanzi_start: HanZi Training
+    pinyin_start: PinYin Training
+    new_word: New word
+    new_account: Create new account
+  sessions:
+    new:
+      no_account: Not registered yet?
+      sign_up: Register for free
+      username_or_email: Username or e-Mail
+      password: Password
+      button: Log In
+      title: Log In
+  layouts:
+    application:
+      login: Log In
+  pages:
+    index:
+      tour1: 'Overview of exercise main window and 2 exercise types hanzi and pinyin'
+      tour2: 'Write by yourself and save some paper! Thanks to modern web technologies, the browser can display a draw area'
+      tour3: 'Huge database (cedict) of the most common chinese characters only one click away. In seconds, you can add new words to your learn list'
+      title: "ShuFa - Learn Chinese Characters efficiently"
+      p1:
+        title: "What is ShuFa?"
+        answer_html: "A strong help for learning <strong>Chinese characters</strong>."
+        features: "Features:"
+        feature_1_html: "huge Database for adding words to own learn list"
+        feature_2_html: "Learning supervison similiar to <a href='http://en.wikipedia.org/wiki/Flashcard'>Flash cards</a> to control trainings progress. Every time you answer correctly, the word will show up later and later"
+        feature_3_html: "Train writing of Chinese characters with your mouse"
+        feature_4_html: "for free, until further notice"
+        feature_5_html: "Author is user of the software as well, and motivated to improve it. Errors and suggestions mail to info@stefanwienert.net"
+      p2:
+        title: "Great, but how much?"
+        answer_html: "ShuFa is running as <strong>Beta</strong> and therefore is <strong>free</strong>."
+        notice: "In case the user will overrun me, I reserve my right to change the services features or add limitations. For that case, it is recommended to specify a valid e-Mail address"
+      p3:
+        title: Tour
+        answer: Some screenshots
+      p4:
+        title: Technical
+        answer_html: "Tested and developed for Firefox and Chrome in current versions.
+Shufa is OpenSource and can be downloaded and developed at <a href='https://github.com/zealot128/ShuFaZuoPin'>https://github.com/zealot128/ShuFaZuoPin</a>. Please notice: ShuFA is a Rails 3.1 application, and therefore needs quite some setup."
+
+  characters:
+    index:
+      title: All HanZi Words
+    show:
+      title: "Details of %{character}"
+  selections:
+    form:
+      fieldset: "Add new flash card"
+    show:
+      progress: Trainings progress
+      level: Level
+      next_visit: "Next planned visit on"
+      remove: Remove flash card from list
+  exercises:
+    index:
+      exercises: Exercise
+      add: Add word
+      button_hanzi: Start HanZi training
+      button_pinyin: Start PinYin training
+      level: Level %{level}
+
+    show:
+      due: "Number due/all %{due}/%{total}"
+      right: "Right (d)"
+      wrong: "Wrong (a)"
+      close: "Guess'd (s)"
+      solve: "Solve (w)"
+  users:
+    edit:
+      title: Update Profile
+    new:
+      title: Register for free
+      already_have_account_html: "Already have an account? Then <a href='%{link}'>Log In</a>"
+
+  formtastic:
+    submit: Save
+    actions:
+      create: "Create %{model}"
+      update: "Update"
+    hints:
+      selection:
+        search: "Search: 'ni hao' / 'hao3' / '好'"
+      user:
+        name: "Your username can only consist of letters and numbers"
+        email: "Your valid e-Mail address. Until now this is not used anywhere in the software. But maybe later :)"
+        password: "Your password have to have at least 6 characters"
+  activerecord:
+    models:
+      selection: Word
+      user: User
+    attributes:
+      selection:
+        search: Search
+      user:
+        username: Username
+        email: E-Mail
+        password: Password
+        password_confirmation: Confirm password
+

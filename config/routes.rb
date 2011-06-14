@@ -1,7 +1,5 @@
 Shufazuopin::Application.routes.draw do
-  get "pages/index"
-
-  get "pages/impressum"
+  filter :locale
 
   resources :selections
 
@@ -11,9 +9,13 @@ Shufazuopin::Application.routes.draw do
     get :tooltip, :on => :collection
   end
 
+  #get "pages/index"
+  #get "pages/impressum"
   match 'user/edit' => 'users#edit', :as => :edit_current_user
 
   match 'signup' => 'users#new', :as => :signup
+  match 'index' => 'pages#index', :as => :index
+  match 'impressum' => 'pages#impressum', :as => :impressum
 
   match 'logout' => 'sessions#destroy', :as => :logout
 

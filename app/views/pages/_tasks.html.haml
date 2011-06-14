@@ -1,4 +1,4 @@
 - set_tasks do |task|
-  - task.add_task t("tasks.home"), :url => "/pages/index"
+  - task.add_task t("tasks.home"), :url => index_path
   - task.add_task t("tasks.new_account"), :url => signup_path, :active => params[:action] == "new"
 

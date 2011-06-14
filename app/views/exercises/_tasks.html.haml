@@ -1,5 +1,5 @@
 - set_tasks do |task|
-  - task.add_task t("tasks.index"), :url => "/exercises", :active => params[:action] == "index"
+  - task.add_task t("tasks.index"), :url => exercises_path, :active => params[:action] == "index"
   - task.add_task t("tasks.new_word"), :url => new_selection_path, :active => params[:action] == "new", :rel => :facebox
   - task.add_task t("tasks.hanzi_start"), :url => exercise_path(1), :active => params[:id] == "1"
   - task.add_task t("tasks.pinyin_start"), :url => exercise_path(2), :active => params[:id] == "2"
