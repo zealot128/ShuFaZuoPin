@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
 
   has_many :selections
   has_many :characters, :through => :selection
+  has_many :notes
 
   # login can be either username or email address
   def self.authenticate(login, pass)

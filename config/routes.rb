@@ -1,4 +1,6 @@
 Shufazuopin::Application.routes.draw do
+  resources :notes
+
   filter :locale
 
   resources :selections

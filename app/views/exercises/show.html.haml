@@ -3,6 +3,10 @@
 
 = render :partial => "exercise_#{@exercise[:id]}", :locals => { :character => @selection.character }
 
+#notes
+  = render "notes/form"
+
+
 #buttons
   = progress_bar @exercise[:id], current_user
   = link_to t(".solve"), '#', :class => :button, :id => "solve"

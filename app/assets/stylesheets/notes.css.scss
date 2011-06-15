@@ -1,0 +1,29 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#notes {
+  max-width: 500px;
+  label, fieldset.buttons {
+    padding-left: 0;
+  }
+  fieldset.inputs {
+    textarea { width: 90%; }
+
+    &.collapsed{
+      border:0;
+      legend{ background: transparent url(/images/collapsed.gif) no-repeat center left; }
+    }
+
+    legend{
+      padding-left:13px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    legend, &.expanded legend{
+      background: transparent url(/images/expanded.gif) no-repeat center left;
+    }
+
+    }
+}

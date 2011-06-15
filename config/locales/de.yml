@@ -31,6 +31,9 @@ de:
     pinyin_start: PinYin Training
     new_word: Neues Wort
     new_account: Neuen Account anlegen
+  notes:
+    form:
+      add-note: Notiz hinzufügen
   sessions:
     new:
       no_account: Noch kein Account?
