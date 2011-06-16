@@ -3,11 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #notes {
-  max-width: 500px;
   label, fieldset.buttons {
     padding-left: 0;
   }
-  fieldset.inputs {
+  fieldset.inputs, .note-list {
+    border: 0;
+    margin: 0;
+    padding: 0;
     textarea { width: 90%; }
 
     &.collapsed{
@@ -26,4 +28,54 @@
     }
 
     }
+  form.note, fieldset.note-list {
+    width: 45%;
+    float: left;
+  }
 }
+.note {
+  &:hover {
+    background: #fffff4;
+  }
+  .buttons {
+    display: block;
+    text-align: right;
+  }
+  .from {
+     color: #999;
+    .text {
+      position: relative;
+      top: -15px;
+      left: 10px;
+    }
+  }
+  .message {
+    position:relative;
+    padding:15px;
+    margin:10px 0 0.5em;
+    color:#333;
+    background:#eee;
+    /* css3 */
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    p { margin: 0; padding: 0; }
+    &:after {
+      content:"";
+      position:absolute;
+      top:-30px;
+      left:20px;
+      border:15px solid transparent;
+      border-bottom-color:#eee;
+      /* reduce the damage in FF3.0 */
+      display:block;
+      width:0;
+    }
+  }
+}
+
+@import "sprites";
+@import "atk_icons";
+.edit-button { @include atk-icon("tech-wrench"); }
+.delete-button { @include atk-icon("basic-ex"); }
+.public-button { @include atk-icon("basic-group"); }

@@ -2,6 +2,7 @@
 vender/cache/*
 sass-rails.git
 db/*.sqlite3
+.*.swp
 log/*.log
 tmp/
 .sass-cache/

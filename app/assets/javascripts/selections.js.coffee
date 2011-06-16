@@ -111,15 +111,16 @@ jQuery ->
         tone = $(this).data('tone')
         $(this).addClass("hanzi-tone-#{tone}") if tone?
       $(document).bind 'keypress', (x) ->
-        return true if $('#facebox').is(":visible")
+        return true if $('#facebox').is(":visible") or $('textarea').is(":focus")
         key=x.charCode
         switch key
           when 97 then $('#wrong').addClass("highlighted").click()
           when 115 then $('#mamahuhu').addClass("highlighted").click()
           when 100 then $('#right').addClass("highlighted").click()
         true
+      false
     $(document).bind "keypress", (x) ->
-      return true if $('#facebox').is(":visible")
+      return true if $('#facebox').is(":visible") or $('textarea').is(":focus")
       if 119 == x.charCode
         $('#solve').addClass("highlighted").click()
       true

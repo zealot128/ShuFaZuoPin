@@ -1,0 +1,6 @@
+#language-selector
+  - I18n.t("lang").keys.each do |key|
+    - extra = I18n.locale == key ? "active" : ""
+    %a{:class => extra, :href => url_for(:locale => key)}
+      %span.flag{:class => key, :title => t('lang.' + key.to_s)}
+        &nbsp;

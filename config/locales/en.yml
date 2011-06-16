@@ -30,6 +30,14 @@ en:
     pinyin_start: PinYin Training
     new_word: New word
     new_account: Create new account
+  lang:
+    de: German
+    en: English
+  notes:
+    form:
+      add-note: Add note
+    note:
+      from: "by %{user} %{date} ago"
   sessions:
     new:
       no_account: Not registered yet?

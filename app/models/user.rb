@@ -36,6 +36,16 @@ class User < ActiveRecord::Base
     BCrypt::Engine.hash_secret(pass, password_salt)
   end
 
+  def notes_for(character)
+    character.notes.where("public = ? or user_id = ?", true, self).order("updated_at desc")
+  end
+
+  def gravatar_image
+    hash_mail = Digest::MD5.hexdigest self.email
+    "http://www.gravatar.com/avatar/#{hash_mail}?d=identicon&s=50"
+  end
+
+
   private
 
   def prepare_password

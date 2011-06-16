@@ -63,7 +63,7 @@ body {
   float: right;
 }
 #menu #language-selector .active {
-  color: #aaa;
+  background: darkRed;
 }
 
 #menu li { display: inline; }

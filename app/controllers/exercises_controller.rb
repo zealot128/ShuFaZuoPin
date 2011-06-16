@@ -1,5 +1,6 @@
 # encoding: utf-8
 class ExercisesController < ApplicationController
+  before_filter :set_redirect_back, :only => [:index, :show]
   def index
     authorize! :read, Character
     if current_user.nil?
@@ -55,5 +56,11 @@ class ExercisesController < ApplicationController
 
     redirect_to exercise_path(ex_id), :notice => message
   end
+
+  private
+  def set_redirect_back
+    session[:return_to] =  request.path
+  end
+
 
 end

@@ -5,3 +5,4 @@
 
 jQuery ->
   $('#notes #new_note fieldset').coolfieldset({speed:"fast", collapsed:true})
+  $('.note-list').coolfieldset({speed:"fast", collapsed:true})

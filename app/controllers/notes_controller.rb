@@ -5,27 +5,35 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     @note.user = current_user
 
-    if @note.save
-      redirect_to(@note, :notice => t('flash.created', :model => Note.model_name.human))
-    else
-      render :action => "new"
+    @note.save
+    respond_to do |format|
+      format.js
+      format.html {
+        url = session[:return_to] || :back
+        redirect_to url, :notice => t('flash.deleted', :model => Note.model_name.human)
+      }
     end
   end
 
+  def edit
+    render :layout => false if request.xhr?
+  end
+
+
   def update
-    @note = Note.find(params[:id])
     @note.user = current_user
 
     if @note.update_attributes(params[:note])
-      redirect_to(@note, :notice => t('flash.updated', :model => Note.model_name.human))
+      url = session[:return_to] || :back
+      redirect_to url, :notice => t('flash.deleted', :model => Note.model_name.human)
     else
       render :action => "edit"
     end
   end
 
   def destroy
-    @note = Note.find(params[:id])
     @note.destroy
-    redirect_to(notes_path, :notice => t('flash.deleted', :model => Note.model_name.human))
+    url = session[:return_to] || :back
+    redirect_to url, :notice => t('flash.deleted', :model => Note.model_name.human)
   end
 end

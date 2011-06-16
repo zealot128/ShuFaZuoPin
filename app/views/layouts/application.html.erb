@@ -20,10 +20,7 @@
     <div id="wrapper-menu">
       <div id="menu">
         <ul><%= yield(:tasks) || render_or_default('tasks') %></ul>
-        <div id='language-selector'>
-          <%= link_to t('.german'), {:locale => "de"}, :class => (I18n.locale == :de ? "active" : "") %>
-          <%= link_to t('.english'), {:locale => "en"}, :class => (I18n.locale == :en ? "active" : "") %>
-        </div>
+        <%= render :partial => 'layouts/language_selector' %>
       </div>
     </div>
     <div id="content">

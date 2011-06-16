@@ -5,6 +5,11 @@
 
 #notes
   = render "notes/form"
+  %fieldset.note-list
+    %legend=t('.notes')
+    %div
+      = render current_user.notes_for(@selection.character)
+.clear
 
 
 #buttons

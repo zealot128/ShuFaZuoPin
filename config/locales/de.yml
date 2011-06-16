@@ -1,6 +1,7 @@
 de:
   are_you_sure_title: Sind sie sicher?
   edit: Bearbeiten
+  delete: "Löschen"
   zew_short: "ZEW"
   exercise_types:
     - :id: 1
@@ -31,9 +32,14 @@ de:
     pinyin_start: PinYin Training
     new_word: Neues Wort
     new_account: Neuen Account anlegen
+  lang:
+    de: "Deutsch"
+    en: "Englisch"
   notes:
     form:
       add-note: Notiz hinzufügen
+    note:
+      from: "Von %{user} geschrieben vor %{date}"
   sessions:
     new:
       no_account: Noch kein Account?
@@ -102,6 +108,7 @@ Shufa ist z.Z. OpenSource und kann unter <a href='https://github.com/zealot128/S
       wrong: "Falsch (a)"
       close: "Geraten (s)"
       solve: "Lösen (w)"
+      notes: Notizen
   users:
     edit:
       title: Profil aktualisieren

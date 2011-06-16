@@ -38,3 +38,25 @@
     left: 150px;
   }
 }
+#exercise-1 {
+  #hanzi-solution {
+    font-size: 200px;
+    line-height: 1.5;
+    float: left;
+    padding: 20px;
+  }
+  #hanzi-canvas {
+    float: left;
+  }
+  .highlighted {
+    color: red;
+  }
+  #pinyin {
+    font-size: 200%;
+    line-height: 1.5;
+
+  }
+}
+.solve {
+  display: none;
+}
