@@ -1,24 +1,248 @@
+---
 en:
+  date:
+    formats:
+      default: ! '%Y-%m-%d'
+      short: ! '%b %d'
+      long: ! '%B %d, %Y'
+    day_names:
+    - Sunday
+    - Monday
+    - Tuesday
+    - Wednesday
+    - Thursday
+    - Friday
+    - Saturday
+    abbr_day_names:
+    - Sun
+    - Mon
+    - Tue
+    - Wed
+    - Thu
+    - Fri
+    - Sat
+    month_names:
+    - !!null 
+    - January
+    - February
+    - March
+    - April
+    - May
+    - June
+    - July
+    - August
+    - September
+    - October
+    - November
+    - December
+    abbr_month_names:
+    - !!null 
+    - Jan
+    - Feb
+    - Mar
+    - Apr
+    - May
+    - Jun
+    - Jul
+    - Aug
+    - Sep
+    - Oct
+    - Nov
+    - Dec
+    order:
+    - :year
+    - :month
+    - :day
+  time:
+    formats:
+      default: ! '%a, %d %b %Y %H:%M:%S %z'
+      short: ! '%d %b %H:%M'
+      long: ! '%B %d, %Y %H:%M'
+    am: am
+    pm: pm
+  support:
+    array:
+      words_connector: ! ', '
+      two_words_connector: ! ' and '
+      last_word_connector: ! ', and '
+  errors:
+    format: ! '%{attribute} %{message}'
+    messages:
+      inclusion: is not included in the list
+      exclusion: is reserved
+      invalid: is invalid
+      confirmation: doesn't match confirmation
+      accepted: must be accepted
+      empty: can't be empty
+      blank: can't be blank
+      too_long: is too long (maximum is %{count} characters)
+      too_short: is too short (minimum is %{count} characters)
+      wrong_length: is the wrong length (should be %{count} characters)
+      not_a_number: is not a number
+      not_an_integer: must be an integer
+      greater_than: must be greater than %{count}
+      greater_than_or_equal_to: must be greater than or equal to %{count}
+      equal_to: must be equal to %{count}
+      less_than: must be less than %{count}
+      less_than_or_equal_to: must be less than or equal to %{count}
+      odd: must be odd
+      even: must be even
+  activerecord:
+    errors:
+      messages:
+        taken: has already been taken
+        record_invalid: ! 'Validation failed: %{errors}'
+    attributes:
+      note:
+        public: Public for all users
+      selection:
+        search: Search
+      user:
+        username: Username
+        email: E-Mail
+        password: Password
+        password_confirmation: Confirm password
+    models:
+      selection: Word
+      user: User
+      note: Notiz
+  number:
+    format:
+      separator: .
+      delimiter: ! ','
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: ! '%u%n'
+        unit: $
+        separator: .
+        delimiter: ! ','
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+    percentage:
+      format:
+        delimiter: ''
+    precision:
+      format:
+        delimiter: ''
+    human:
+      format:
+        delimiter: ''
+        precision: 3
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: ! '%n %u'
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          kb: KB
+          mb: MB
+          gb: GB
+          tb: TB
+      decimal_units:
+        format: ! '%n %u'
+        units:
+          unit: ''
+          thousand: Thousand
+          million: Million
+          billion: Billion
+          trillion: Trillion
+          quadrillion: Quadrillion
+  datetime:
+    distance_in_words:
+      half_a_minute: half a minute
+      less_than_x_seconds:
+        one: less than 1 second
+        other: less than %{count} seconds
+      x_seconds:
+        one: 1 second
+        other: ! '%{count} seconds'
+      less_than_x_minutes:
+        one: less than a minute
+        other: less than %{count} minutes
+      x_minutes:
+        one: 1 minute
+        other: ! '%{count} minutes'
+      about_x_hours:
+        one: about 1 hour
+        other: about %{count} hours
+      x_days:
+        one: 1 day
+        other: ! '%{count} days'
+      about_x_months:
+        one: about 1 month
+        other: about %{count} months
+      x_months:
+        one: 1 month
+        other: ! '%{count} months'
+      about_x_years:
+        one: about 1 year
+        other: about %{count} years
+      over_x_years:
+        one: over 1 year
+        other: over %{count} years
+      almost_x_years:
+        one: almost 1 year
+        other: almost %{count} years
+    prompts:
+      year: Year
+      month: Month
+      day: Day
+      hour: Hour
+      minute: Minute
+      second: Seconds
+  helpers:
+    select:
+      prompt: Please select
+    submit:
+      create: Create %{model}
+      update: Update %{model}
+      submit: Save %{model}
+  plural:
+    notes:
+      zero: No notes
+      one: One note
+      other: ! '%{count} notes'
+  delete: delete
+  exercises:
+    show:
+      notes: Notes
+      due: Number due/all %{due}/%{total}
+      right: Right (d)
+      wrong: Wrong (a)
+      close: Guess'd (s)
+      solve: Solve (w)
+    index:
+      exercises: Exercise
+      add: Add word
+      button_hanzi: Start HanZi training
+      button_pinyin: Start PinYin training
+      level: Level %{level}
   are_you_sure_title: Are you sure?
   edit: Edit
-  zew_short: "Classifier"
+  zew_short: Classifier
   exercise_types:
-    - :id: 1
-      :name: HanZi
-      :description: "Train writing of characters"
-    - :id: 2
-      :name: PinYin
-      :description: Train reading characters and pronounciation
+  - :id: 1
+    :name: HanZi
+    :description: Train writing of characters
+  - :id: 2
+    :name: PinYin
+    :description: Train reading characters and pronounciation
   flash:
-    error: "Error occurred"
-    created: "%{model} successfully created"
-    updated: "%{model} successfully updated"
-    deleted: "%{model} successfully deleted"
-    undeleted: "%{model} successfully recovered"
-    unpublished: "This addition is not visible at this time"
-    register: "Thanks for your registration. You are now logged in and ready to start!"
-    login_success: "Login successful"
-    login_failed: "Invalid username or password"
+    error: Error occurred
+    created: ! '%{model} successfully created'
+    updated: ! '%{model} successfully updated'
+    deleted: ! '%{model} successfully deleted'
+    undeleted: ! '%{model} successfully recovered'
+    unpublished: This addition is not visible at this time
+    register: Thanks for your registration. You are now logged in and ready to start!
+    login_success: Login successful
+    login_failed: Invalid username or password
     logout_success: Logout successful
   tasks:
     edit: Edit
@@ -30,6 +254,14 @@ en:
     pinyin_start: PinYin Training
     new_word: New word
     new_account: Create new account
+  lang:
+    de: German
+    en: English
+  notes:
+    form:
+      add-note: Add note
+    note:
+      from: by %{user} %{date} ago
   sessions:
     new:
       no_account: Not registered yet?
@@ -45,87 +277,69 @@ en:
       english: English
   pages:
     index:
-      tour1: 'Overview of exercise main window and 2 exercise types hanzi and pinyin'
-      tour2: 'Write by yourself and save some paper! Thanks to modern web technologies, the browser can display a draw area'
-      tour3: 'Huge database (cedict) of the most common chinese characters only one click away. In seconds, you can add new words to your learn list'
-      title: "ShuFa - Learn Chinese Characters efficiently"
+      tour1: Overview of exercise main window and 2 exercise types hanzi and pinyin
+      tour2: Write by yourself and save some paper! Thanks to modern web technologies,
+        the browser can display a draw area
+      tour3: Huge database (cedict) of the most common chinese characters only one
+        click away. In seconds, you can add new words to your learn list
+      title: ShuFa - Learn Chinese Characters efficiently
       p1:
-        title: "What is ShuFa?"
-        answer_html: "A strong help for learning <strong>Chinese characters</strong>."
-        features: "Features:"
-        feature_1_html: "huge Database for adding words to own learn list"
-        feature_2_html: "Learning supervison similiar to <a href='http://en.wikipedia.org/wiki/Flashcard'>Flash cards</a> to control trainings progress. Every time you answer correctly, the word will show up later and later"
-        feature_3_html: "Train writing of Chinese characters with your mouse"
-        feature_4_html: "for free, until further notice"
-        feature_5_html: "Author is user of the software as well, and motivated to improve it. Errors and suggestions mail to info@stefanwienert.net"
+        title: What is ShuFa?
+        answer_html: A strong help for learning <strong>Chinese characters</strong>.
+        features: ! 'Features:'
+        feature_1_html: huge Database for adding words to own learn list
+        feature_2_html: Learning supervison similiar to <a href='http://en.wikipedia.org/wiki/Flashcard'>Flash
+          cards</a> to control trainings progress. Every time you answer correctly,
+          the word will show up later and later
+        feature_3_html: Train writing of Chinese characters with your mouse
+        feature_4_html: for free, until further notice
+        feature_5_html: Author is user of the software as well, and motivated to improve
+          it. Errors and suggestions mail to info@stefanwienert.net
       p2:
-        title: "Great, but how much?"
-        answer_html: "ShuFa is running as <strong>Beta</strong> and therefore is <strong>free</strong>."
-        notice: "In case the user will overrun me, I reserve my right to change the services features or add limitations. For that case, it is recommended to specify a valid e-Mail address"
+        title: Great, but how much?
+        answer_html: ShuFa is running as <strong>Beta</strong> and therefore is <strong>free</strong>.
+        notice: In case the user will overrun me, I reserve my right to change the
+          services features or add limitations. For that case, it is recommended to
+          specify a valid e-Mail address
       p3:
         title: Tour
         answer: Some screenshots
       p4:
         title: Technical
-        answer_html: "Tested and developed for Firefox and Chrome in current versions.
-Shufa is OpenSource and can be downloaded and developed at <a href='https://github.com/zealot128/ShuFaZuoPin'>https://github.com/zealot128/ShuFaZuoPin</a>. Please notice: ShuFA is a Rails 3.1 application, and therefore needs quite some setup."
-
+        answer_html: ! 'Tested and developed for Firefox and Chrome in current versions.
+          Shufa is OpenSource and can be downloaded and developed at <a href=''https://github.com/zealot128/ShuFaZuoPin''>https://github.com/zealot128/ShuFaZuoPin</a>.
+          Please notice: ShuFA is a Rails 3.1 application, and therefore needs quite
+          some setup.'
   characters:
     index:
       title: All HanZi Words
     show:
-      title: "Details of %{character}"
+      title: Details of %{character}
   selections:
     form:
-      fieldset: "Add new flash card"
+      fieldset: Add new flash card
     show:
       progress: Trainings progress
       level: Level
-      next_visit: "Next planned visit on"
+      next_visit: Next planned visit on
       remove: Remove flash card from list
-  exercises:
-    index:
-      exercises: Exercise
-      add: Add word
-      button_hanzi: Start HanZi training
-      button_pinyin: Start PinYin training
-      level: Level %{level}
-
-    show:
-      due: "Number due/all %{due}/%{total}"
-      right: "Right (d)"
-      wrong: "Wrong (a)"
-      close: "Guess'd (s)"
-      solve: "Solve (w)"
   users:
     edit:
       title: Update Profile
     new:
       title: Register for free
-      already_have_account_html: "Already have an account? Then <a href='%{link}'>Log In</a>"
-
+      already_have_account_html: Already have an account? Then <a href='%{link}'>Log
+        In</a>
   formtastic:
     submit: Save
     actions:
-      create: "Create %{model}"
-      update: "Update"
+      create: Create %{model}
+      update: Update
     hints:
       selection:
-        search: "Search: 'ni hao' / 'hao3' / '好'"
+        search: ! 'Search: ''ni hao'' / ''hao3'' / ''好'''
       user:
-        name: "Your username can only consist of letters and numbers"
-        email: "Your valid e-Mail address. Until now this is not used anywhere in the software. But maybe later :)"
-        password: "Your password have to have at least 6 characters"
-  activerecord:
-    models:
-      selection: Word
-      user: User
-    attributes:
-      selection:
-        search: Search
-      user:
-        username: Username
-        email: E-Mail
-        password: Password
-        password_confirmation: Confirm password
-
+        name: Your username can only consist of letters and numbers
+        email: Your valid e-Mail address. Until now this is not used anywhere in the
+          software. But maybe later :)
+        password: Your password have to have at least 6 characters

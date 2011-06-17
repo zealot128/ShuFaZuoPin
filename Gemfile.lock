@@ -54,6 +54,8 @@ GEM
     alias (0.2.2)
     ansi (1.2.5)
     arel (2.1.1)
+    atk_icons (0.1.2)
+      compass
     awesome_print (0.4.0)
     bcrypt-ruby (2.1.4)
     boson (0.3.3)
@@ -89,9 +91,6 @@ GEM
     haml (3.1.2)
     hike (1.0.0)
     hirb (0.4.5)
-    hoptoad_notifier (2.4.11)
-      activesupport
-      builder
     hpricot (0.8.4)
     i18n (0.6.0)
     id_stuffer (0.0.1)
@@ -190,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  atk_icons
   bcrypt-ruby
   cancan
   ciyuan
@@ -198,7 +198,6 @@ DEPENDENCIES
   fancy-buttons
   formtastic
   haml
-  hoptoad_notifier
   hpricot
   irbtools
   jquery-rails

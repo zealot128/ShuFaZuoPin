@@ -1,17 +1,24 @@
-- title (@selection.character.pinyin + " " + @selection.character.hanzi)
-= render "tasks"
+#selection
+  - title (@selection.character.pinyin + " " + @selection.character.hanzi)
+  = render "tasks"
 
-= render @selection.character
+  = render @selection.character
 
-%h2=t('.progress')
-- t('exercise_types').each do |exercise|
-  %h3=exercise[:name]
-  .foo
-    =t('.level')
-    =@selection.send("level_#{exercise[:id]}")
-  .bar
-    =t('.next_visit')
-    = next_visit_words(@selection, exercise[:id])
+  %h2=t('.progress')
+  - t('exercise_types').each do |exercise|
+    %h3=exercise[:name]
+    .foo
+      =t('.level')
+      =@selection.send("level_#{exercise[:id]}")
+    .bar
+      =t('.next_visit')
+      = next_visit_words(@selection, exercise[:id])
 
-= link_to t('.remove'), @selection, :class => :button, :method => :delete, :confirm => t('are_you_sure_title')
+  = link_to t('.remove'), @selection, :class => :button, :method => :delete, :confirm => t('are_you_sure_title')
 
+  #notes
+    %fieldset.note-list
+      %legend=t('plural.notes', :count => @notes.count)
+      %div
+        = render @notes
+  .clear

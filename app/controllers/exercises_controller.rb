@@ -1,5 +1,6 @@
 # encoding: utf-8
 class ExercisesController < ApplicationController
+  before_filter :set_redirect_back, :only => [:index, :show]
   def index
     authorize! :read, Character
     if current_user.nil?
@@ -17,6 +18,9 @@ class ExercisesController < ApplicationController
     authorize! :read, Character
     @exercise = t('exercise_types').find{|i| i[:id] == params[:id].to_i}
     @selection = Selection.find_next(current_user.id, params[:id].to_i)
+    @note = Note.new(:public => true)
+    @note.character = @selection.character
+    @notes = current_user.notes_for(@selection.character)
     redirect_to(root_path, :notice => "Keine Worte angelegt") if @selection.nil?
   end
 
@@ -53,5 +57,11 @@ class ExercisesController < ApplicationController
 
     redirect_to exercise_path(ex_id), :notice => message
   end
+
+  private
+  def set_redirect_back
+    session[:return_to] =  request.path
+  end
+
 
 end

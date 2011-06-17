@@ -1,0 +1,106 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "fancy-buttons";
+#notes {
+  label, fieldset.buttons {
+    padding-left: 0;
+  }
+  fieldset.inputs, .note-list {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    textarea { width: 90%; }
+
+    &.collapsed{
+      border:0;
+      legend{ background: transparent url(/images/collapsed.gif) no-repeat center left; }
+    }
+
+    legend{
+      padding-left:13px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    legend, &.expanded legend{
+      background: transparent url(/images/expanded.gif) no-repeat center left;
+    }
+
+    }
+  form.note, fieldset.note-list {
+    float: left;
+  }
+  form.note { width: 35%; }
+  fieldset.note-list { width: 62%; }
+}
+
+form.note {
+  textarea { width: 90%; }
+  .inputs ol .buttons { padding-left: 0; }
+  .commit input {
+
+    @extend .fancy-button-base;
+    @include fancy-button-colors(#A60000);
+    padding: 5px;
+  }
+  #note_public {
+    margin-right: 20px;
+  }
+  li.optional {
+    padding: 10px 0;
+  }
+}
+#facebox form.note {
+  textarea { min-width: 500px;
+    height: 300px;
+}
+}
+
+div.note {
+  &:hover {
+    background: #fffff4;
+  }
+  .buttons {
+    display: block;
+    text-align: right;
+  }
+  .from {
+     color: #999;
+    .text {
+      position: relative;
+      top: -15px;
+      left: 10px;
+    }
+  }
+  .message {
+    position:relative;
+    padding:15px;
+    margin:10px 0 0.5em;
+    color:#333;
+    background:#eee;
+    /* css3 */
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    p { margin: 0; padding: 3px 0 0 0; }
+    &:after {
+      content:"";
+      position:absolute;
+      top:-30px;
+      left:20px;
+      border:15px solid transparent;
+      border-bottom-color:#eee;
+      /* reduce the damage in FF3.0 */
+      display:block;
+      width:0;
+    }
+  }
+}
+
+@import "sprites";
+@import "atk_icons";
+.edit-button { @include atk-icon("tech-wrench"); }
+.delete-button { @include atk-icon("basic-ex"); }
+.public-button { @include atk-icon("basic-group"); }

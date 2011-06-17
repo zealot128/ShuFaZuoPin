@@ -1,10 +1,10 @@
 # ShuFaZuoPin
 
-A Rails 3.1RC1 App for learning chinese language. Currently i18n only for
-german language, but the translations of all characters is english.  Users can
-add words to their learning lists and then start to learn. If passed correctly,
-the word will advance to the next level, resulting in a later appearance based
-on spaced learning paradigm.
+A Rails 3.1RC3 App for learning chinese language. Currently i18n only for
+English and German available.  Users can add words to their learning lists
+(flash cards) and then start to learn. If passed correctly, the word will
+advance to the next level, resulting in a later appearance based on spaced
+learning paradigm.
 
 # Installation
 
@@ -32,7 +32,7 @@ Chinese learning book *LiaoLiao*, which are:
 * red for 4th tone
 * these can be changed in app/assets/stylesheets/selections.css.scss
 
-For my experience, codings the hanzi characters in the respective color is
+For my experience, coding the hanzi characters in the respective color is
 effective for learning correct pronounciation.
 
 There is a rake tasks for importing a lot of basic hanzi characters from some
@@ -67,7 +67,6 @@ Then the word will show up later, according to models/selection.rb
 ## Todo/plans
 
 * problem-list and statistics, to find out words that are not so save in memory
-* english i18n if wished (just a matter of work)
 * Saving traditional chinese characters in addition to simplified for all the
   university students. Let user choose in his profile, which one to learn
 * every user can make notes for word. Share or private visibility
@@ -78,14 +77,13 @@ Then the word will show up later, according to models/selection.rb
     is empty on delivery
 * User administration features for admin. standard community features etcpp
 
-
-
 ## Already done
 
 * add multi character words
 * design could be pimped
 * Integration Etymology if applied https://github.com/bastien/ciyuan
 * caching if necessary (until now works fine)
+* english i18n if wished (just a matter of work)
 * SQL Caching for list views
 
 ## Collaboration
@@ -95,7 +93,9 @@ Then the word will show up later, according to models/selection.rb
 
 ## Disclaimer
 
-This app is a rapid prototype mark 2 from a sunday. Some of the logic aspects
-are tested where most of the html is untested. So there is no warranty at all.
+This app is work in progress. Some of the logic aspects are tested where most
+of the html is untested. So there is no warranty at all.  I am not a native
+English speaker, so the translation should have some mistakes. :) (-> which
+leads to forks and pull requests again)
 
 

@@ -1,0 +1,19 @@
+.note{ :class => cycle("odd","even")}
+  .from
+    = image_tag note.user.gravatar_image, :alt => "Userimage"
+    %span.text
+      =t('.from', :user => note.user.username, :date => distance_of_time_in_words_to_now(note.created_at))
+  %span.buttons
+    - if note.public?
+      %span.public-button{:title => "public"}
+        &nbsp;
+    - if can? :update, note
+      = link_to "", edit_note_path(note), :rel => :facebox, :title => t('edit'), :class => "edit-button"
+      = link_to "", note_path(note), :confirm => t('are_you_sure_title'), :method => :delete, :title => t('delete'), :class => "delete-button"
+  .message
+
+
+    -if @selection.present?
+      = simple_format(placeholderize(@selection.character.hanzi, simple_format(note.body)).html_safe)
+    - else
+      = simple_format note.body

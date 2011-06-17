@@ -7,6 +7,8 @@ class Ability
     end
     can :read, Character
     can [:new, :create], Selection
+    can :create, Selection
+    can [:update, :destroy], Selection, :user_id => user.id
     can :manage, Selection, :user_id => user.id
     if user.admin
       can :manage, :all

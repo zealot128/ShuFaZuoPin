@@ -1,0 +1,8 @@
+= semantic_form_for @note, :remote => !request.xhr? do |f|
+  = f.inputs t('.add-note') do
+    %div
+      = f.input :body, :label => false
+      = f.input :public
+      = f.input :character_id, :as => :hidden
+      = f.buttons
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110612110013) do
+ActiveRecord::Schema.define(:version => 20110615220243) do
 
   create_table "characters", :force => true do |t|
     t.string   "pinyin"
@@ -30,9 +30,27 @@ ActiveRecord::Schema.define(:version => 20110612110013) do
     t.string   "traditional"
   end
 
+  add_index "characters", ["hanzi"], :name => "index_characters_on_hanzi"
   add_index "characters", ["hsk_level"], :name => "index_characters_on_hsk_level"
   add_index "characters", ["norm_pinyin"], :name => "index_characters_on_norm_pinyin"
   add_index "characters", ["pinyin"], :name => "index_characters_on_pinyin"
+  add_index "characters", ["simplified"], :name => "index_characters_on_simplified"
+  add_index "characters", ["traditional"], :name => "index_characters_on_traditional"
+  add_index "characters", ["type"], :name => "index_characters_on_type"
+
+  create_table "notes", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "character_id"
+    t.text     "body"
+    t.boolean  "public"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notes", ["character_id"], :name => "index_notes_on_character_id"
+  add_index "notes", ["public", "user_id", "character_id"], :name => "index_notes_on_public_and_user_id_and_character_id"
+  add_index "notes", ["public"], :name => "index_notes_on_public"
+  add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
 
   create_table "selections", :force => true do |t|
     t.integer  "character_id"

@@ -50,6 +50,7 @@ module Shufazuopin
     config.sass.load_paths ||= []
     config.sass.load_paths << "#{Gem.loaded_specs['compass'].full_gem_path}/frameworks/compass/stylesheets"
     config.sass.load_paths << "#{Gem.loaded_specs['fancy-buttons'].full_gem_path}/lib/stylesheets"
+    config.sass.load_paths << "#{Gem.loaded_specs['atk_icons'].full_gem_path}/stylesheets"
     # Enable the asset pipeline
     config.assets.enabled = true
   end

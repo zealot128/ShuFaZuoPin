@@ -1,0 +1,18 @@
+# vim: set ft=ruby:
+MetricFu::Configuration.run do |config|
+  #config.rcov[:rcov_opts] << "-Itest" # Needed to find test_helper
+  config.rcov[:external] = 'coverage/rcov/rcov.txt'
+  config.metrics  -= [:saikuro, :churn]
+  config.base_directory     = 'doc/metrics'
+  config.scratch_directory  = File.join(config.base_directory, 'scratch')
+  config.output_directory   = File.join(config.base_directory, 'output')
+  config.data_directory     = File.join(config.base_directory, '_data')
+  config.flog = { :dirs_to_flog => ['app'] }
+  config.roodi = { :dirs_to_roodi => ['app'] }
+  config.flay ={:dirs_to_flay => ['app'],
+    :minimum_score => 80,
+    :filetypes => ['rb'] }
+  config.syntax_highlighting = false
+
+end
+

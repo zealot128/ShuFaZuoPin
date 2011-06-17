@@ -28,6 +28,7 @@ gem 'sass'
 gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
 gem 'compass', :git => "https://github.com/chriseppstein/compass.git", :branch => "rails31"
 gem 'fancy-buttons', :require => false
+gem 'atk_icons'
 
 
 # Asset template engines
