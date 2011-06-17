@@ -2,7 +2,8 @@ require "#{Rails.root}/lib/string"
 module ExercisesHelper
 
   def placeholderize( hanzi, html)
-    html.gsub( hanzi, "<span class='placeholder'>_</span>").
+    placehold = (["_"] * hanzi.length).join
+    html.gsub( hanzi, "<span class='placeholder'>#{placehold}</span>").
       gsub(/(\{Compare.*\})/, '<div class="solve compare">\1</div>').html_safe
   end
 

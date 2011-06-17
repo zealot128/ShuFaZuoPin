@@ -56,29 +56,30 @@ $standard-color: #700;
     border-bottom: 1px solid #555;
     border-right: 1px solid #555;
     border-left: 1px solid #ddd;
-}
+  }
   input {
     display: block;
     float: none;
     &[type=text], &[type=password] {
       font-size: 150%;
       border: 1px solid darkRed;
+      min-width: 150px;
+      max-width: 250px;
     }
     &[type=submit] {
       @extend .fancy-button-base;
-
     }
   }
   a#register {
-      @extend .fancy-button-base;
-      padding: 10px 20px;
-      @include fancy-button-colors(#D65600);
+    @extend .fancy-button-base;
+    padding: 10px 20px;
+    @include fancy-button-colors(#D65600);
   }
 }
 
 a.button {
-      @extend .fancy-button-base;
-      display: block;
+  @extend .fancy-button-base;
+  display: block;
 }
 
 #buttons .solve .button {
@@ -108,4 +109,3 @@ a.button {
   }
 }
 #level { @include text-shadow(2px 2px white, -2px -2px white); }
-

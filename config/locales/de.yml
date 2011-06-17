@@ -1,4 +1,10 @@
 de:
+  plural:
+    notes:
+      zero: "Keine Notizen"
+      one: "1 Notiz"
+      other: "%{count} Notizen"
+
   are_you_sure_title: Sind sie sicher?
   edit: Bearbeiten
   delete: "Löschen"
@@ -140,4 +146,6 @@ Shufa ist z.Z. OpenSource und kann unter <a href='https://github.com/zealot128/S
         email: E-Mail
         password: Passwort
         password_confirmation: Passwort bestätigen
+      note:
+        public: Für alle sichtbar
 

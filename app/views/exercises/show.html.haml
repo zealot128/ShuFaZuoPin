@@ -6,9 +6,9 @@
 #notes
   = render "notes/form"
   %fieldset.note-list
-    %legend=t('.notes')
+    %legend=t('plural.notes', :count => @notes.count)
     %div
-      = render current_user.notes_for(@selection.character)
+      = render @notes
 .clear
 
 

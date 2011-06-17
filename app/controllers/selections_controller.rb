@@ -8,6 +8,9 @@ class SelectionsController < ApplicationController
   end
 
   def show
+    @note = Note.new(:public => true)
+    @note.character = @selection.character
+    @notes = current_user.notes_for(@selection.character)
     render :layout => false if request.xhr?
   end
 

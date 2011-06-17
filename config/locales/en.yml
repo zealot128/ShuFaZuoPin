@@ -128,6 +128,7 @@ Shufa is OpenSource and can be downloaded and developed at <a href='https://gith
     models:
       selection: Word
       user: User
+      note: Notiz
     attributes:
       selection:
         search: Search

@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "fancy-buttons";
 #notes {
   label, fieldset.buttons {
     padding-left: 0;
@@ -29,11 +30,35 @@
 
     }
   form.note, fieldset.note-list {
-    width: 45%;
     float: left;
   }
+  form.note { width: 35%; }
+  fieldset.note-list { width: 62%; }
 }
-.note {
+
+form.note {
+  textarea { width: 90%; }
+  .inputs ol .buttons { padding-left: 0; }
+  .commit input {
+
+    @extend .fancy-button-base;
+    @include fancy-button-colors(#A60000);
+    padding: 5px;
+  }
+  #note_public {
+    margin-right: 20px;
+  }
+  li.optional {
+    padding: 10px 0;
+  }
+}
+#facebox form.note {
+  textarea { min-width: 500px;
+    height: 300px;
+}
+}
+
+div.note {
   &:hover {
     background: #fffff4;
   }
@@ -59,7 +84,7 @@
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
     border-radius:10px;
-    p { margin: 0; padding: 0; }
+    p { margin: 0; padding: 3px 0 0 0; }
     &:after {
       content:"";
       position:absolute;

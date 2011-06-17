@@ -14,6 +14,6 @@
 
 
     -if @selection.present?
-      = simple_format placeholderize(@selection.character.hanzi, note.body).html_safe
+      = simple_format(placeholderize(@selection.character.hanzi, simple_format(note.body)).html_safe)
     - else
       = simple_format note.body
