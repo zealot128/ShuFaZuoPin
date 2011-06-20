@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates_length_of :password, :minimum => 4, :allow_blank => true
 
-  has_many :selections
+  has_many :selections,  :dependent => :destroy
   has_many :characters, :through => :selection
-  has_many :notes
+  has_many :notes,  :dependent => :destroy
 
   # login can be either username or email address
   def self.authenticate(login, pass)

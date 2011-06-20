@@ -138,6 +138,7 @@ Shufa ist z.Z. OpenSource und kann unter <a href='https://github.com/zealot128/S
     models:
       selection: Wort
       user: Nutzer
+      note: Notiz
     attributes:
       selection:
         search: Suche

@@ -22,7 +22,7 @@ en:
     - Fri
     - Sat
     month_names:
-    - !!null 
+    - !!null
     - January
     - February
     - March
@@ -36,7 +36,7 @@ en:
     - November
     - December
     abbr_month_names:
-    - !!null 
+    - !!null
     - Jan
     - Feb
     - Mar
@@ -105,7 +105,7 @@ en:
     models:
       selection: Word
       user: User
-      note: Notiz
+      note: Note
   number:
     format:
       separator: .
